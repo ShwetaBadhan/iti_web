@@ -1,0 +1,68 @@
+@extends('layouts.master')
+@section('title','Chairman Message')
+@section('content')
+
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/breadcrumb_bg.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb__content">
+                            <h3 class="title">Chairman Message</h3>
+                            <nav class="breadcrumb">
+                                <span property="itemListElement" typeof="ListItem">
+                                    <a href="{{ route('home') }}">Home</a>
+                                </span>
+                                <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
+                                <span property="itemListElement" typeof="ListItem">Chairman Message</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb__shape-wrap">
+                <img src="assets/img/others/breadcrumb_shape01.svg" alt="img" class="alltuchtopdown">
+                <img src="assets/img/others/breadcrumb_shape02.svg" alt="img" data-aos="fade-right" data-aos-delay="300">
+                <img src="assets/img/others/breadcrumb_shape03.svg" alt="img" data-aos="fade-up" data-aos-delay="400">
+                <img src="assets/img/others/breadcrumb_shape04.svg" alt="img" data-aos="fade-down-left" data-aos-delay="400">
+                <img src="assets/img/others/breadcrumb_shape05.svg" alt="img" data-aos="fade-left" data-aos-delay="400">
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+
+        <!-- about-area -->
+        <section class="about-area-three section-py-120">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-6 col-md-9">
+                        <div class="about__images-three tg-svg">
+                            <img src="https://www.ambedkariti.com/images/web_images/principal.gif" alt="img">
+                         
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about__content-three">
+                            <div class="section__title mb-10">
+                                <span class="sub-title">Chairman's Message</span>
+                                <h2 class="title">
+                                    Empowering Students to reach their
+                                    <span class="position-relative">
+                                        <svg x="0px" y="0px" preserveAspectRatio="none" viewBox="0 0 209 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.74438 7.70565C69.7006 -1.18799 136.097 -2.38304 203.934 4.1205C207.178 4.48495 209.422 7.14626 208.933 10.0534C206.793 23.6481 205.415 36.5704 204.801 48.8204C204.756 51.3291 202.246 53.5582 199.213 53.7955C136.093 59.7623 74.1922 60.5985 13.5091 56.3043C10.5653 56.0924 7.84371 53.7277 7.42158 51.0325C5.20725 38.2627 2.76333 25.6511 0.0898448 13.1978C-0.465589 10.5873 1.61173 8.1379 4.73327 7.70565" fill="currentcolor" />
+                                        </svg>
+                                        potential
+                                    </span>
+                                    Goal For Next Level Challenge.
+                                </h2>
+                            </div>
+                            <p class="desc">In a world that is increasingly driven by technology and specialized skills, the most powerful asset you can possess is a certified, hands-on expertise. Here at our Industrial Training Institute, we don't just teach trades; we build careers and fuel industries.</p>
+                            <p class="desc">Whether you are drawn to the intricate wiring of an Auto Electrician, the digital world of COPA and Computer Management, the creative precision of Dress Making and Beautician, or the core strength of Electrical, Carpenter, or Automobile trades, you have chosen a path of immense respect and opportunity. Our curriculum, from Basic to Advanced levels, is meticulously designed to transform your potential into professional mastery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about-area-end -->
+
+
+@endsection
