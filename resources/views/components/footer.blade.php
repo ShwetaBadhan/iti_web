@@ -23,9 +23,9 @@
                           <div class="footer__link">
                               <ul class="list-wrap">
                                   <li><a href="{{ route('about') }}">About Us</a></li>
-                                  <li><a href="">Chairman Message</a></li>
-                                  <li><a href="">Our Team</a></li>
-                                  <li><a href="">Gallery</a></li>
+                                  <li><a href="{{ route('chairman-message') }}">Chairman Message</a></li>
+                                  <li><a href="{{ route('our-team') }}">Our Team</a></li>
+                                  <li><a href="{{ route('our-gallery') }}">Gallery</a></li>
 
                               </ul>
                           </div>
@@ -36,10 +36,10 @@
                           <h4 class="footer__widget-title">Our Courses</h4>
                           <div class="footer__link">
                               <ul class="list-wrap">
-                                  <li><a href="">Truck Dispatcher</a></li>
-                                  <li><a href="">Fire & Safety</a></li>
-                                  <li><a href="">Motor Mechanic</a></li>
-                                  <li><a href="">Video Editing</a></li>
+                                  <li><a href="{{ route('truck-dispatch-details') }}">Truck Dispatcher</a></li>
+                                  <li><a href="{{ route('fire-safety-details') }}">Fire & Safety</a></li>
+                                  <li><a href="{{ route('motor-mechanic-details') }}">Motor Mechanic</a></li>
+                                  <li><a href="{{ route('video-editing-details') }}">Video Editing</a></li>
 
                               </ul>
                           </div>
@@ -94,14 +94,14 @@
               <div class="row align-items-center">
                   <div class="col-md-7">
                       <div class="copy-right-text">
-                          <p>© <?php echo date('Y')?> Dr.B.R.Ambedkar ITI, Inc.</p>
+                          <p>© <?php echo date('Y')?> Dr.B.R.Ambedkar ITI, Inc. | Developed by Ds Innovative Solutions</p>
                       </div>
                   </div>
                   <div class="col-md-5">
                       <div class="footer__bottom-menu">
                           <ul class="list-wrap">
-                              <li><a href="">Term of Use</a></li>
-                              <li><a href="">Privacy Policy</a></li>
+                              <li><a href="{{ route('terms-conditions') }}">Terms & Conditions</a></li>
+                              <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                           </ul>
                       </div>
                   </div>

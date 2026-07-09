@@ -6,10 +6,10 @@
                <div class="row">
                    <div class="col-lg-6">
                        <ul class="tg-header__top-info list-wrap">
-                           <li><img src="assets/img/icons/map_marker.svg" alt="Icon"> <span>589 5th Ave, NY 10024,
-                                   USA</span></li>
+                           <li><img src="assets/img/icons/map_marker.svg" alt="Icon"> <span>Chandan Nagar ,Kartarpur
+                                   Distt. Jalandhar</span></li>
                            <li><img src="assets/img/icons/envelope.svg" alt="Icon"> <a
-                                   href="mailto:info@skillgrodemo.com">info@skillgrodemo.com</a></li>
+                                   href="mailto:ambedkariti@ymail.comu">ambedkariti@ymail.com</a></li>
                        </ul>
                    </div>
                    <div class="col-lg-6">
@@ -34,8 +34,8 @@
                        <div class="tgmenu__wrap">
                            <nav class="tgmenu__nav">
                                <div class="logo">
-                                   <a href="{{ route('home') }}"><img src="assets/img/logo/logo-iti.png" style="width: 220px;"
-                                           alt="Logo"></a>
+                                   <a href="{{ route('home') }}"><img src="assets/img/logo/logo-iti.png"
+                                           style="width: 220px;" alt="Logo"></a>
                                </div>
                                <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                                    <ul class="navigation">
@@ -46,7 +46,7 @@
                                            <ul class="sub-menu">
                                                <li><a href="{{ route('about') }}">About Us</a></li>
                                                <li><a href="{{ route('chairman-message') }}">Chairman Message</a></li>
-                                               {{-- <li><a href="{{ route('our-team') }}">Our Team</a></li> --}}
+                                               <li><a href="{{ route('our-mission') }}">Our Mission</a></li>
 
 
                                            </ul>
@@ -57,106 +57,56 @@
 
 
                                            <ul class="sub-menu">
-                                               <li class="menu-item-has-children">
-                                                   <a href="{{ route('auto-electrician') }}">Auto Electrician</a>
-                                                   <ul class="sub-menu">
-                                                       <li><a href="{{ route('auto-electrician') }}">Auto Electrician
-                                                               (Basic)</a></li>
-                                                       <li><a href="{{ route('auto-electrician') }}">Auto Electrician
-                                                               (Advance)</a></li>
-                                                   </ul>
+                                               <li>
+                                                   <a href="{{ route('truck-dispatch-details') }}">Truck Dispatcher</a>
+
+                                               </li>
+                                               <li>
+                                                   <a href="{{ route('fire-safety-details') }}">Fire & Safety</a>
+
+                                               </li>
+                                               <li>
+                                                   <a href="{{ route('trailer-training-details') }}">Trailer
+                                                       Training</a>
+
+                                               </li>
+                                               <li>
+                                                   <a href="{{ route('forklift-training-details') }}">Forklift
+                                                       Training</a>
+
+                                               </li>
+                                               <li>
+                                                   <a href="{{ route('jcb-training-details') }}">JCB Training</a>
+
+                                               </li>
+                                               <li>
+                                                   <a href="{{ route('excavator-training-details') }}">Excavator
+                                                       Training</a>
+
+                                               </li>
+                                               <li>
+                                                   <a href="{{ route('motor-mechanic-details') }}">Motor Mechanic</a>
+
+                                               </li>
+                                               <li>
+                                                   <a href="{{ route('video-editing-details') }}">Video Editing</a>
+
                                                </li>
 
-                                               <li class="menu-item-has-children">
-                                                   <a href="javascript:void(0)">Automobile</a>
-                                                   <ul class="sub-menu">
-                                                       <li><a href="{{ route('automobile') }}#basic">Automobile (Basic)</a></li>
-                                                       <li><a href="{{ route('automobile') }}#diesel">Automobile (Diesel)</a></li>
-                                                       <li><a href="{{ route('automobile') }}#petrol">Automobile (Petrol)</a></li>
-                                                   </ul>
-                                               </li>
 
-                                               <li class="menu-item-has-children">
-                                                   <a href="#">Mechanical</a>
-                                                   <ul class="sub-menu">
-                                                       <li><a href="">Fitter</a></li>
-                                                       <li><a href="">Welder</a></li>
-                                                       <li><a href="">Tool & Die</a></li>
-                                                       <li><a href="">Pump Operator</a></li>
-                                                   </ul>
-                                               </li>
 
-                                               <li class="menu-item-has-children">
-                                                   <a href="#">Electrical</a>
-                                                   <ul class="sub-menu">
-                                                       <li><a href="">Electrician</a></li>
-                                                       <li><a href="">Wireman</a></li>
-                                                       <li><a href="">Electrical
-                                                               Technician</a></li>
-                                                   </ul>
-                                               </li>
-
-                                               <li class="menu-item-has-children">
-                                                   <a href="#">Computer & IT</a>
-                                                   <ul class="sub-menu">
-                                                       <li><a href="">Basic Computer</a></li>
-                                                       <li><a href="">Computer Management</a>
-                                                       </li>
-                                                       <li><a href="">COPA</a></li>
-                                                       <li><a href="">Tally</a></li>
-                                                   </ul>
-                                               </li>
-
-                                               <li class="menu-item-has-children">
-                                                   <a href="#">Construction</a>
-                                                   <ul class="sub-menu">
-                                                       <li><a href="">Plumber</a></li>
-                                                       <li><a href="">Carpenter</a></li>
-                                                       <li><a href="">Painter</a></li>
-                                                       <li><a href="">Pipe Fitter</a></li>
-                                                   </ul>
-                                               </li>
-
-                                               <li class="menu-item-has-children">
-                                                   <a href="#">Beauty & Lifestyle</a>
-                                                   <ul class="sub-menu">
-                                                       <li><a href="">Beautician</a></li>
-                                                       <li><a href="">Dress Making</a></li>
-                                                       <li><a href="">Cooking</a></li>
-                                                   </ul>
-                                               </li>
-
-                                               <li class="menu-item-has-children">
-                                                   <a href="#">Mechanic Safety</a>
-                                                   <ul class="sub-menu">
-                                                       <li><a href="">Fire & Industrial
-                                                               Safety</a></li>
-                                                       <li><a href="">Hazardous Goods
-                                                               Handling</a></li>
-                                                   </ul>
-                                               </li>
-
-                                               <li class="menu-item-has-children">
-                                                   <a href="#">Education</a>
-                                                   <ul class="sub-menu">
-                                                       <li><a href="">NTT (Nursery Teacher Training)</a></li>
-                                                       <li><a href="">ETT (Elementary Teacher Training)</a>
-                                                       </li>
-                                                       <li><a href="">Nanny Training</a></li>
-                                                   </ul>
-                                               </li>
                                            </ul>
 
 
                                        </li>
-                                       <li><a href="#">Photo Gallery</a>
-                                          
-                                       </li>
-
-                                       <li><a href="{{ route('home') }}">Results</a>
+                                       <li><a href="{{ route('our-gallery') }}">Photo Gallery</a>
 
                                        </li>
-                                       <li><a href="{{ route('home') }}">Contact Us</a>
+
+                                       <li><a href="{{ route('our-results') }}">Results</a>
+
+                                       </li>
+                                       <li><a href="{{ route('contact-us') }}">Contact Us</a>
 
                                        </li>
                                    </ul>
@@ -183,7 +133,8 @@
                            <nav class="tgmobile__menu-box">
                                <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
                                <div class="nav-logo">
-                                   <a href="{{ route('home') }}"><img src="assets/img/logo/logo-iti.png" alt="Logo"></a>
+                                   <a href="{{ route('home') }}"><img src="assets/img/logo/logo-iti.png"
+                                           alt="Logo"></a>
                                </div>
                                <div class="tgmobile__search">
                                    <form action="#">
