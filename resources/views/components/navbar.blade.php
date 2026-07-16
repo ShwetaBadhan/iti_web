@@ -7,9 +7,9 @@
                    <div class="col-lg-6">
                        <ul class="tg-header__top-info list-wrap">
                            <li><img src="assets/img/icons/map_marker.svg" alt="Icon"> <span>Chandan Nagar ,Kartarpur
-                                   Distt. Jalandhar</span></li>
+                                   Distt. | Jalandhar</span></li>
                            <li><img src="assets/img/icons/envelope.svg" alt="Icon"> <a
-                                   href="mailto:ambedkariti@ymail.comu">ambedkariti@ymail.com</a></li>
+                                   href="mailto:info@ambedkariti.com">info@ambedkariti.com</a></li>
                        </ul>
                    </div>
                    <div class="col-lg-6">
@@ -46,6 +46,7 @@
                                            <ul class="sub-menu">
                                                <li><a href="{{ route('about') }}">About Us</a></li>
                                                <li><a href="{{ route('chairman-message') }}">Chairman Message</a></li>
+                                               <li><a href="{{ route('director-message') }}">Director Message</a></li>
                                                <li><a href="{{ route('our-mission') }}">Our Mission</a></li>
 
 
@@ -90,6 +91,10 @@
                                                </li>
                                                <li>
                                                    <a href="{{ route('video-editing-details') }}">Video Editing</a>
+
+                                               </li>
+                                               <li>
+                                                   <a href="{{ route('car-driving-details') }}">Car Driving</a>
 
                                                </li>
 

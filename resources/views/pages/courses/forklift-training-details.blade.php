@@ -12,6 +12,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb__content">
+                        <h2 class="title">Forklift Training</h2>
                             <nav class="breadcrumb">
                                 <span property="itemListElement" typeof="ListItem">
                                     <a href= "{{ route('home') }}">Home</a>
@@ -58,9 +59,11 @@
                                         data-bs-target="#overview-tab-pane" type="button" role="tab"
                                         aria-controls="overview-tab-pane" aria-selected="true">Course Detail</button>
                                 </li>
-                                {{-- <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum-tab-pane" type="button" role="tab" aria-controls="curriculum-tab-pane" aria-selected="false">Eligibility Criteria</button>
-                                </li> --}}
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab"
+                                        data-bs-target="#curriculum-tab-pane" type="button" role="tab"
+                                        aria-controls="curriculum-tab-pane" aria-selected="false">Course Overview</button>
+                                </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="instructors-tab" data-bs-toggle="tab"
                                         data-bs-target="#instructors-tab-pane" type="button" role="tab"
@@ -76,22 +79,7 @@
                                 <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel"
                                     aria-labelledby="overview-tab" tabindex="0">
                                     <div class="courses__overview-wrap">
-                                        <h3 class="title">Become a Certified Forklift Operator</h3>
-                                        <p align="justify">The Forklift Operator Training Course at Dr. B. R. Ambedkar ITI,
-                                            Jalandhar is designed to equip students with the practical skills and safety
-                                            knowledge required to operate forklifts efficiently in warehouses, factories,
-                                            logistics centers, manufacturing plants, ports, and construction sites.</p>
-                                        <p align="justify">This industry-focused program combines classroom instruction with
-                                            100% practical hands-on training, enabling students to safely handle materials,
-                                            inspect equipment, load and unload goods, and follow workplace safety standards.
-                                            Upon completion, students are prepared for rewarding careers in India's growing
-                                            logistics and industrial sectors.</p>
-                                        <h3 class="title">Government Approved Certification</h3>
-                                        <p align="justify">Students who successfully complete the training receive a
-                                            <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
-                                                ITI, Jalandhar</strong>, enhancing their employability and opening doors to
-                                            opportunities in leading industries across India and abroad.
-                                        </p>
+
                                         <h3 class="title">Course Duration</h3>
                                         <ul class="about__info-list list-wrap">
                                             <li class="about__info-list-item">
@@ -150,37 +138,28 @@
 
                                     </div>
                                 </div>
-                                {{-- <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel" aria-labelledby="curriculum-tab" tabindex="0">
+                                <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel"
+                                    aria-labelledby="curriculum-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">
-                                        <h3 class="title">Eligibility Criteria</h3>
-                                       <ul class="about__info-list list-wrap">
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">12th Pass Students</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">ITI Students</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Graduates</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Job Seekers</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Freshers</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Working Professionals looking for a career switch</p>
-                                            </li>
-                                        </ul>
+                                        <h3 class="title">Become a Certified Forklift Operator</h3>
+                                        <p align="justify">The Forklift Operator Training Course at Dr. B. R. Ambedkar ITI,
+                                            Jalandhar is designed to equip students with the practical skills and safety
+                                            knowledge required to operate forklifts efficiently in warehouses, factories,
+                                            logistics centers, manufacturing plants, ports, and construction sites.</p>
+                                        <p align="justify">This industry-focused program combines classroom instruction
+                                            with
+                                            100% practical hands-on training, enabling students to safely handle materials,
+                                            inspect equipment, load and unload goods, and follow workplace safety standards.
+                                            Upon completion, students are prepared for rewarding careers in India's growing
+                                            logistics and industrial sectors.</p>
+                                        <h3 class="title">Government Approved Certification</h3>
+                                        <p align="justify">Students who successfully complete the training receive a
+                                            <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
+                                                ITI, Jalandhar</strong>, enhancing their employability and opening doors to
+                                            opportunities in leading industries across India and abroad.
+                                        </p>
                                     </div>
-                                </div> --}}
+                                </div>
                                 <div class="tab-pane fade" id="instructors-tab-pane" role="tabpanel"
                                     aria-labelledby="instructors-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">
@@ -241,7 +220,7 @@
                         <div class="courses__details-sidebar">
 
 
-                             @include('components.course-form')
+                            @include('components.course-form')
 
                         </div>
                     </div>

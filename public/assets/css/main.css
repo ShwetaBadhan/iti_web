@@ -5150,7 +5150,7 @@ textarea {
 
   display: flex;
   align-items: center;
-  padding: 100px 0 140px;
+  /* padding: 100px 0 140px; */
 }
 @media (max-width: 1500px) {
   .slider__bg {

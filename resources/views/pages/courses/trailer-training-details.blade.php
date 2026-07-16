@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'HTV Trailer Training Details')
+@section('title', 'Trailer Training Details')
 @section('content')
 
 
@@ -12,6 +12,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb__content">
+                            <h2 class="title">Trailer Training</h2>
                             <nav class="breadcrumb">
                                 <span property="itemListElement" typeof="ListItem">
                                     <a href= "{{ route('home') }}">Home</a>
@@ -21,7 +22,7 @@
                                     <a href= "{{ route('home') }}">Courses</a>
                                 </span>
                                 <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
-                                <span property="itemListElement" typeof="ListItem">HTV Trailer Training</span>
+                                <span property="itemListElement" typeof="ListItem">Trailer Training</span>
                             </nav>
                         </div>
                     </div>
@@ -51,16 +52,18 @@
                         <div class="courses__details-content">
 
                             <h2 class="title">HTV Trailer Training</h2>
-                           
+
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="overview-tab" data-bs-toggle="tab"
                                         data-bs-target="#overview-tab-pane" type="button" role="tab"
                                         aria-controls="overview-tab-pane" aria-selected="true">Course Detail</button>
                                 </li>
-                                {{-- <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum-tab-pane" type="button" role="tab" aria-controls="curriculum-tab-pane" aria-selected="false">Eligibility Criteria</button>
-                                </li> --}}
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab"
+                                        data-bs-target="#curriculum-tab-pane" type="button" role="tab"
+                                        aria-controls="curriculum-tab-pane" aria-selected="false">Course Overview</button>
+                                </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="instructors-tab" data-bs-toggle="tab"
                                         data-bs-target="#instructors-tab-pane" type="button" role="tab"
@@ -76,30 +79,24 @@
                                 <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel"
                                     aria-labelledby="overview-tab" tabindex="0">
                                     <div class="courses__overview-wrap">
-                                        <h3 class="title">Drive Your Future with Professional Trailer Driving Skills</h3>
-                                        <p align="justify">The Trailer Driving Training Course at Dr. B. R. Ambedkar ITI, Jalandhar is designed to develop skilled and confident heavy trailer drivers for the transportation and logistics industry. Through practical, hands-on training, students learn to safely operate heavy commercial trailers while understanding road safety regulations, vehicle maintenance, and professional driving techniques.</p>
-                                        <p align="justify">Our expert instructors provide real-world training using industry-standard methods to prepare students for careers in logistics, transportation companies, fleet operations, and government sectors.</p>
-                                        <h3 class="title">Government Approved Certification</h3>
-                                        <p align="justify">Upon successful completion of the training, students will receive a
-                                            <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
-                                                ITI, Jalandhar</strong>, adding value to their qualifications and enhancing employment opportunities across India.
-                                        </p>
-<h3 class="title">Course Duration</h3>
-<ul class="about__info-list list-wrap">
+
+                                        <h3 class="title">Course Duration</h3>
+                                        <ul class="about__info-list list-wrap">
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
                                                 <p class="content">21 Days</p>
                                             </li>
-                                           
-                                            </ul>
+
+                                        </ul>
                                         <h3 class="title">What you'll learn in this course?</h3>
-                                        <p align="justify">After completing the course, students can work with logistics companies, dispatch
+                                        <p align="justify">After completing the course, students can work with logistics
+                                            companies, dispatch
                                             firms, or start working remotely with international clients.</p>
 
                                         <ul class="about__info-list list-wrap">
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Introduction to Heavy Commercial Vehicles    </p>
+                                                <p class="content">Introduction to Heavy Commercial Vehicles </p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
@@ -141,37 +138,29 @@
 
                                     </div>
                                 </div>
-                                {{-- <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel" aria-labelledby="curriculum-tab" tabindex="0">
+                                <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel"
+                                    aria-labelledby="curriculum-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">
-                                        <h3 class="title">Eligibility Criteria</h3>
-                                       <ul class="about__info-list list-wrap">
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">12th Pass Students</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">ITI Students</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Graduates</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Job Seekers</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Freshers</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Working Professionals looking for a career switch</p>
-                                            </li>
-                                        </ul>
+                                        <h3 class="title">Drive Your Future with Professional Trailer Driving Skills</h3>
+                                        <p align="justify">The Trailer Driving Training Course at Dr. B. R. Ambedkar ITI,
+                                            Jalandhar is designed to develop skilled and confident heavy trailer drivers for
+                                            the transportation and logistics industry. Through practical, hands-on training,
+                                            students learn to safely operate heavy commercial trailers while understanding
+                                            road safety regulations, vehicle maintenance, and professional driving
+                                            techniques.</p>
+                                        <p align="justify">Our expert instructors provide real-world training using
+                                            industry-standard methods to prepare students for careers in logistics,
+                                            transportation companies, fleet operations, and government sectors.</p>
+                                        <h3 class="title">Government Approved Certification</h3>
+                                        <p align="justify">Upon successful completion of the training, students will
+                                            receive
+                                            a
+                                            <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
+                                                ITI, Jalandhar</strong>, adding value to their qualifications and enhancing
+                                            employment opportunities across India.
+                                        </p>
                                     </div>
-                                </div> --}}
+                                </div>
                                 <div class="tab-pane fade" id="instructors-tab-pane" role="tabpanel"
                                     aria-labelledby="instructors-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">
@@ -207,7 +196,7 @@
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
                                                 <p class="content">Transport Company Driver</p>
-                                                
+
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
@@ -221,7 +210,7 @@
                                                 <i class="flaticon-angle-right"></i>
                                                 <p class="content">Long-Haul Trailer Driver</p>
                                             </li>
-                                            
+
                                         </ul>
                                     </div>
                                 </div>
@@ -232,7 +221,7 @@
                         <div class="courses__details-sidebar">
 
 
-                           @include('components.course-form')
+                            @include('components.course-form')
 
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Excavator Training Details')
+@section('title', 'Car Driving Details')
 @section('content')
 
 
@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb__content">
-                         <h2 class="title">Excavator Training</h2>
+                            <h3 class="title">Car Driving</h3>
                             <nav class="breadcrumb">
                                 <span property="itemListElement" typeof="ListItem">
                                     <a href= "{{ route('home') }}">Home</a>
@@ -22,7 +22,7 @@
                                     <a href= "{{ route('home') }}">Courses</a>
                                 </span>
                                 <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
-                                <span property="itemListElement" typeof="ListItem">Excavator Training</span>
+                                <span property="itemListElement" typeof="ListItem">Car Driving</span>
                             </nav>
                         </div>
                     </div>
@@ -47,11 +47,11 @@
                 <div class="row">
                     <div class="col-xl-8 col-lg-8">
                         <div class="courses__details-thumb">
-                            <img src="assets/img/courses/excavator-training-course.png" alt="img">
+                            <img src="assets/img/courses/car-driving-course.png" alt="img">
                         </div>
                         <div class="courses__details-content">
 
-                            <h2 class="title">Excavator Training</h2>
+                            <h2 class="title">Car Driving</h2>
 
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -62,7 +62,8 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab"
                                         data-bs-target="#curriculum-tab-pane" type="button" role="tab"
-                                        aria-controls="curriculum-tab-pane" aria-selected="false">Course Overview</button>
+                                        aria-controls="curriculum-tab-pane" aria-selected="false">
+                                        Course Overview</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="instructors-tab" data-bs-toggle="tab"
@@ -89,66 +90,66 @@
 
                                         </ul>
                                         <h3 class="title">What you'll learn in this course?</h3>
-                                        <p align="justify">After completing the course, students can work with logistics
-                                            companies, dispatch
-                                            firms, or start working remotely with international clients.</p>
+                                        <p align="justify">After completing the course, students will have the skills and
+                                            confidence to drive safely, obtain a driving licence, and pursue employment as a
+                                            professional driver or chauffeur.</p>
 
                                         <ul class="about__info-list list-wrap">
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Introduction to Excavator Machines</p>
+                                                <p class="content">Introduction to Cars & Vehicle Controls</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Machine Controls & Dashboard Functions</p>
+                                                <p class="content">Understanding Dashboard Indicators</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Safe Operating Procedures</p>
+                                                <p class="content">Traffic Rules & Road Signs</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Excavation & Digging Techniques</p>
+                                                <p class="content">Safe Driving Techniques</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Trenching & Earthmoving Operations</p>
+                                                <p class="content">Steering & Gear Control</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Loading Trucks with Materials</p>
+                                                <p class="content">Clutch, Brake & Accelerator Coordination</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Site Grading & Land Clearing</p>
+                                                <p class="content">Starting, Stopping & Smooth Driving</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Hydraulic System Basics</p>
+                                                <p class="content">Driving in City Traffic</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Daily Equipment Inspection</p>
+                                                <p class="content">Highway Driving Basics</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Preventive Maintenance</p>
+                                                <p class="content">Reverse Driving Techniques</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Fuel & Lubrication Management</p>
+                                                <p class="content">Parallel & Angle Parking</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Workplace Safety & PPE</p>
+                                                <p class="content">Hill Start & Incline Driving</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Emergency Handling Procedures</p>
+                                                <p class="content">Night Driving Fundamentals</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Industrial Safety Standards</p>
+                                                <p class="content">Defensive Driving Techniques</p>
                                             </li>
                                         </ul>
 
@@ -157,25 +158,17 @@
                                 <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel"
                                     aria-labelledby="curriculum-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">
-                                        <h3 class="title">Build a Career in Heavy Equipment Operations</h3>
-                                        <p align="justify">The Excavator Operator Training Course at Dr. B. R. Ambedkar
-                                            ITI,
-                                            Jalandhar is designed to provide students with the practical skills and
-                                            technical expertise required to safely operate hydraulic excavators used in
-                                            construction, mining, infrastructure, road development, and industrial projects.
-                                        </p>
-                                        <p align="justify">This course combines 100% practical field training with
-                                            classroom
-                                            instruction, enabling students to master excavation techniques, machine
-                                            controls, site safety, and equipment maintenance. Under the guidance of
-                                            experienced instructors, students gain real-world experience operating
-                                            excavators in professional work environments.</p>
+                                        <h3 class="title">Build a Successful Career as a Professional Car Driver</h3>
+                                        <p align="justify">Students receive hands-on training from experienced instructors
+                                            on city driving, highway driving, parking techniques, traffic rules, defensive
+                                            driving, and vehicle maintenance to ensure they are job-ready and confident
+                                            behind the wheel.</p>
                                         <h3 class="title">Government Approved Certification</h3>
                                         <p align="justify">Upon successful completion of the course, students receive a
                                             <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
-                                                ITI, Jalandhar</strong>, increasing their employability in construction
-                                            companies, mining industries, infrastructure projects, government departments,
-                                            and private contractors across India.
+                                                ITI, Jalandhar</strong>, enhancing their employment opportunities in
+                                            transportation companies, taxi services, corporate organizations, logistics
+                                            firms, government departments, and private sectors across India.
                                         </p>
                                     </div>
                                 </div>
@@ -197,44 +190,44 @@
                                         <ul class="about__info-list list-wrap">
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Excavator Operator</p>
+                                                <p class="content">Professional Car Driver</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Heavy Equipment Operator</p>
+                                                <p class="content">Chauffeur</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Earthmoving Equipment Operator</p>
+                                                <p class="content">Personal Driver</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Construction Equipment Operator</p>
+                                                <p class="content">Taxi Driver</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Mining Equipment Operator</p>
+                                                <p class="content">Cab Service Driver (Uber, Ola, etc.)</p>
 
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Road Construction Operator</p>
+                                                <p class="content">Corporate Driver</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Infrastructure Project Operator</p>
+                                                <p class="content">Government Department Driver</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Site Equipment Operator</p>
+                                                <p class="content">School & Institution Driver</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Industrial Machinery Operator</p>
+                                                <p class="content">Delivery Vehicle Driver</p>
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Civil Construction Operator</p>
+                                                <p class="content">Logistics & Fleet Driver</p>
                                             </li>
 
                                         </ul>

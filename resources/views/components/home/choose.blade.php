@@ -14,25 +14,23 @@
                       <div class="choose__content">
                           <div class="section__title mb-15">
                               <span class="sub-title"> Get Employed in India & Overseas</span>
-                              <h2 class="title">From India to International Opportunities—We Help You Get Hired Faster.
+                              <h2 class="title">Build Skills. Get Hired. Go Global.
                               </h2>
                           </div>
-                          <p>
-                              Start your journey toward a successful career with industry-recognized training.
-                              Whether you dream of securing a Government job or building a career abroad,
-                              our practical courses prepare you with the skills employers demand.
+                          <p align="justify">
+                             Hands-on training with Government-approved and internationally recognized certifications to help you build successful careers in India and abroad.
                           </p>
                           <ul class="about__info-list list-wrap">
 
                               <li class="about__info-list-item">
-                                  <i class="fas fa-fire-extinguisher text-danger"></i>
+                                  <i class="fas fa-fire-extinguisher text-dark"></i>
                                   <p class="content">
                                       Fire & Safety
                                   </p>
                               </li>
 
                               <li class="about__info-list-item">
-                                  <i class="fas fa-tools text-warning"></i>
+                                  <i class="fas fa-tools text-dark"></i>
                                   <p class="content">
                                       Motor Mechanic
 
@@ -40,7 +38,7 @@
                               </li>
 
                               <li class="about__info-list-item">
-                                  <i class="fas fa-briefcase text-success"></i>
+                                  <i class="fas fa-briefcase text-dark"></i>
                                   <p class="content">
                                       Placement Assistance
                                   </p>

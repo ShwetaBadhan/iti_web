@@ -64,7 +64,7 @@
                                                fill="currentcolor"></path>
                                        </svg>
                                    </div>
-                                   <h2 class="title">100% Placement Assistance</h2>
+                                   <h2 class="title">Dedicated Placement Assistance</h2>
                                </div>
                                <p>Receive career guidance, interview preparation, and placement support to help you
                                    secure rewarding job opportunities.</p>

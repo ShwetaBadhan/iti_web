@@ -12,6 +12,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb__content">
+                            <h2 class="title">Truck Dispatch</h2>
                             <nav class="breadcrumb">
                                 <span property="itemListElement" typeof="ListItem">
                                     <a href= "{{ route('home') }}">Home</a>
@@ -68,9 +69,11 @@
                                         data-bs-target="#overview-tab-pane" type="button" role="tab"
                                         aria-controls="overview-tab-pane" aria-selected="true">Course Detail</button>
                                 </li>
-                                {{-- <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum-tab-pane" type="button" role="tab" aria-controls="curriculum-tab-pane" aria-selected="false">Eligibility Criteria</button>
-                                </li> --}}
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab"
+                                        data-bs-target="#curriculum-tab-pane" type="button" role="tab"
+                                        aria-controls="curriculum-tab-pane" aria-selected="false">Course Overview</button>
+                                </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="instructors-tab" data-bs-toggle="tab"
                                         data-bs-target="#instructors-tab-pane" type="button" role="tab"
@@ -86,27 +89,11 @@
                                 <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel"
                                     aria-labelledby="overview-tab" tabindex="0">
                                     <div class="courses__overview-wrap">
-                                        <h3 class="title">Build a Career in the Global Logistics Industry</h3>
-                                        <p align="justify">Truck Dispatching is one of the fastest-growing career opportunities in the
-                                            global transportation and logistics industry. A Truck Dispatcher plays a vital
-                                            role in coordinating with truck drivers, freight brokers, and customers to
-                                            ensure efficient load booking, route planning, timely deliveries, and smooth
-                                            fleet operations across the <strong> USA and Canada</strong>.</p>
-                                        <p align="justify">At <strong>Dr. B. R. Ambedkar ITI, Jalandhar</strong>, we offer a <strong> 15-Day
-                                                Practical Truck Dispatch Training Program</strong> designed to equip
-                                            students with the skills required to work confidently in the international
-                                            logistics industry. The course includes hands-on training on industry-standard
-                                            dispatch software, load boards, broker communication, documentation, route
-                                            planning, and live dispatch operations.</p>
-                                        <h3 class="title">Government Approved Certification</h3>
-                                        <p align="justify">Upon successful completion of the training, students will receive a
-                                            <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
-                                                ITI, Jalandhar</strong>, enhancing their credibility and improving their
-                                            employment opportunities in the logistics sector.
-                                        </p>
+                                        
 
                                         <h3 class="title">What you'll learn in this course?</h3>
-                                        <p align="justify">After completing the course, students can work with logistics companies, dispatch
+                                        <p align="justify">After completing the course, students can work with logistics
+                                            companies, dispatch
                                             firms, or start working remotely with international clients.</p>
 
                                         <ul class="about__info-list list-wrap">
@@ -134,37 +121,31 @@
 
                                     </div>
                                 </div>
-                                {{-- <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel" aria-labelledby="curriculum-tab" tabindex="0">
+                                <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel" aria-labelledby="curriculum-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">
-                                        <h3 class="title">Eligibility Criteria</h3>
-                                       <ul class="about__info-list list-wrap">
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">12th Pass Students</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">ITI Students</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Graduates</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Job Seekers</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Freshers</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Working Professionals looking for a career switch</p>
-                                            </li>
-                                        </ul>
+                                      <h3 class="title">Build a Career in the Global Logistics Industry</h3>
+                                        <p align="justify">Truck Dispatching is one of the fastest-growing career
+                                            opportunities in the
+                                            global transportation and logistics industry. A Truck Dispatcher plays a vital
+                                            role in coordinating with truck drivers, freight brokers, and customers to
+                                            ensure efficient load booking, route planning, timely deliveries, and smooth
+                                            fleet operations across the <strong> USA and Canada</strong>.</p>
+                                        <p align="justify">At <strong>Dr. B. R. Ambedkar ITI, Jalandhar</strong>, we offer
+                                            a <strong> 15-Day
+                                                Practical Truck Dispatch Training Program</strong> designed to equip
+                                            students with the skills required to work confidently in the international
+                                            logistics industry. The course includes hands-on training on industry-standard
+                                            dispatch software, load boards, broker communication, documentation, route
+                                            planning, and live dispatch operations.</p>
+                                        <h3 class="title">Government Approved Certification</h3>
+                                        <p align="justify">Upon successful completion of the training, students will
+                                            receive a
+                                            <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
+                                                ITI, Jalandhar</strong>, enhancing their credibility and improving their
+                                            employment opportunities in the logistics sector.
+                                        </p>
                                     </div>
-                                </div> --}}
+                                </div>
                                 <div class="tab-pane fade" id="instructors-tab-pane" role="tabpanel"
                                     aria-labelledby="instructors-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">

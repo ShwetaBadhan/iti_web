@@ -24,21 +24,21 @@
                         <div class="faq__content">
                             <div class="section__title pb-10">
                                 <span class="sub-title">Faq’s</span>
-                                <h2 class="title">Start Learning From <br> World’s Pro Instructors</h2>
+                                <h2 class="title">Master Skills. Unlock Opportunities</h2>
                             </div>
-                            <p>Groove’s intuitive shared inbox makes it easy for team members to organize, prioritize and.In this episode.</p>
+                            <p>Gain job-ready skills with expert training, practical workshops, and real-world experience all under one roof.</p>
                             <div class="faq__wrap">
                                 <div class="accordion" id="accordionExample">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                                 aria-expanded="true" aria-controls="collapseOne">
-                                                What’s Skillgrow Want to give you?
+                                                Is Dr. B.R. Ambedkar ITI Government Approved?
                                             </button>
                                         </h2>
                                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                <p>Groove’s intuitive shared inbox makes it easy for team members organize prioritize and.In this episode.urvived not only five centuries.Edhen an unknown printer took a galley of type and scrambl
+                                                <p>Yes. Dr. B.R. Ambedkar ITI is a government-approved institute, and students receive certificates as per the applicable government norms.
                                                 </p>
                                             </div>
                                         </div>
@@ -47,12 +47,12 @@
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Why choose us for your education?
+                                                Is the ITI Certificate Valid in Foreign Countries?
                                             </button>
                                         </h2>
                                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                <p>Groove’s intuitive shared inbox makes it easy for team members organize prioritize and.In this episode.urvived not only five centuries.Edhen an unknown printer took a galley of type and scrambl
+                                                <p>Yes. ITI certificates are widely recognized and can support employment opportunities in many foreign countries, subject to the employer's and country's requirements.
                                                 </p>
                                             </div>
                                         </div>
@@ -61,12 +61,12 @@
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                How We Provide Service For you?
+                                                Are the Courses Affordable?
                                             </button>
                                         </h2>
                                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                <p>Groove’s intuitive shared inbox makes it easy for team members organize prioritize and.In this episode.urvived not only five centuries.Edhen an unknown printer took a galley of type and scrambl
+                                                <p>Yes. We offer quality technical education at affordable fees, making skill development accessible for every student.
                                                 </p>
                                             </div>
                                         </div>
@@ -75,12 +75,26 @@
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                Are you Affordable For Your Course
+                                                Does the Institute Provide Hostel and Food Facilities?
                                             </button>
                                         </h2>
                                         <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                <p>Groove’s intuitive shared inbox makes it easy for team members organize prioritize and.In this episode.urvived not only five centuries.Edhen an unknown printer took a galley of type and scrambl
+                                                <p>Yes. We provide comfortable hostel accommodation along with hygienic and nutritious food facilities under one roof for students.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                Why Should I Choose Dr. B.R. Ambedkar ITI?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <p>We provide government-approved training, experienced instructors, practical learning, affordable fees, and hostel facilities to help students build successful careers.
                                                 </p>
                                             </div>
                                         </div>

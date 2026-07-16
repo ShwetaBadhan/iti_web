@@ -12,6 +12,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb__content">
+                            <h2 class="title">Fire & Safety</h2>
                             <nav class="breadcrumb">
                                 <span property="itemListElement" typeof="ListItem">
                                     <a href= "{{ route('home') }}">Home</a>
@@ -51,16 +52,18 @@
                         <div class="courses__details-content">
 
                             <h2 class="title">Fire & Safety</h2>
-                           
+
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="overview-tab" data-bs-toggle="tab"
                                         data-bs-target="#overview-tab-pane" type="button" role="tab"
                                         aria-controls="overview-tab-pane" aria-selected="true">Course Detail</button>
                                 </li>
-                                {{-- <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum-tab-pane" type="button" role="tab" aria-controls="curriculum-tab-pane" aria-selected="false">Eligibility Criteria</button>
-                                </li> --}}
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab"
+                                        data-bs-target="#curriculum-tab-pane" type="button" role="tab"
+                                        aria-controls="curriculum-tab-pane" aria-selected="false">Course Overview</button>
+                                </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="instructors-tab" data-bs-toggle="tab"
                                         data-bs-target="#instructors-tab-pane" type="button" role="tab"
@@ -76,17 +79,9 @@
                                 <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel"
                                     aria-labelledby="overview-tab" tabindex="0">
                                     <div class="courses__overview-wrap">
-                                        <h3 class="title">Build a Safe & Rewarding Career in Fire and Industrial Safety</h3>
-                                        <p align="justify">The Fire & Safety Course is designed to prepare students for rewarding careers in industrial safety, fire prevention, emergency response, and occupational health. With increasing safety regulations across industries, trained Fire & Safety professionals are in high demand in India and abroad.</p>
-                                        <p align="justify">At <strong>Dr. B. R. Ambedkar ITI, Jalandhar</strong>,students receive 100% practical training through live demonstrations, mock drills, industrial safety practices, and hands-on equipment handling. Our experienced trainers ensure every student gains the practical knowledge and confidence required to work in real industrial environments.</p>
-                                        <h3 class="title">Government Approved Certification</h3>
-                                        <p align="justify">Upon successful completion of the training, students will receive a
-                                            <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
-                                                ITI, Jalandhar</strong>, enhancing their credibility and improving their
-                                            employment opportunities in the logistics sector.
-                                        </p>
-<h3 class="title">Course Duration</h3>
-<ul class="about__info-list list-wrap">
+
+                                        <h3 class="title">Course Duration</h3>
+                                        <ul class="about__info-list list-wrap">
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
                                                 <p class="content">1 Month</p>
@@ -107,9 +102,10 @@
                                                 <i class="flaticon-angle-right"></i>
                                                 <p class="content">2 Years</p>
                                             </li>
-                                            </ul>
+                                        </ul>
                                         <h3 class="title">What you'll learn in this course?</h3>
-                                        <p align="justify">After completing the course, students can work with logistics companies, dispatch
+                                        <p align="justify">After completing the course, students can work with logistics
+                                            companies, dispatch
                                             firms, or start working remotely with international clients.</p>
 
                                         <ul class="about__info-list list-wrap">
@@ -157,37 +153,29 @@
 
                                     </div>
                                 </div>
-                                {{-- <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel" aria-labelledby="curriculum-tab" tabindex="0">
+                                <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel"
+                                    aria-labelledby="curriculum-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">
-                                        <h3 class="title">Eligibility Criteria</h3>
-                                       <ul class="about__info-list list-wrap">
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">12th Pass Students</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">ITI Students</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Graduates</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Job Seekers</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Freshers</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Working Professionals looking for a career switch</p>
-                                            </li>
-                                        </ul>
+                                        <h3 class="title">Build a Safe & Rewarding Career in Fire and Industrial Safety
+                                        </h3>
+                                        <p align="justify">The Fire & Safety Course is designed to prepare students for
+                                            rewarding careers in industrial safety, fire prevention, emergency response, and
+                                            occupational health. With increasing safety regulations across industries,
+                                            trained Fire & Safety professionals are in high demand in India and abroad.</p>
+                                        <p align="justify">At <strong>Dr. B. R. Ambedkar ITI, Jalandhar</strong>,students
+                                            receive 100% practical training through live demonstrations, mock drills,
+                                            industrial safety practices, and hands-on equipment handling. Our experienced
+                                            trainers ensure every student gains the practical knowledge and confidence
+                                            required to work in real industrial environments.</p>
+                                        <h3 class="title">Government Approved Certification</h3>
+                                        <p align="justify">Upon successful completion of the training, students will
+                                            receive a
+                                            <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
+                                                ITI, Jalandhar</strong>, enhancing their credibility and improving their
+                                            employment opportunities in the logistics sector.
+                                        </p>
                                     </div>
-                                </div> --}}
+                                </div>
                                 <div class="tab-pane fade" id="instructors-tab-pane" role="tabpanel"
                                     aria-labelledby="instructors-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">
@@ -222,8 +210,9 @@
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
-                                                <p class="content">Fire & Safety Supervisor in Malls, Hospitals & Schools</p>
-                                                
+                                                <p class="content">Fire & Safety Supervisor in Malls, Hospitals & Schools
+                                                </p>
+
                                             </li>
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
@@ -240,7 +229,7 @@
                                             <li class="about__info-list-item">
                                                 <i class="flaticon-angle-right"></i>
                                                 <p class="content">Power Plant & Chemical Plant Safety Jobs</p>
-                                                
+
                                             </li>
                                         </ul>
                                     </div>

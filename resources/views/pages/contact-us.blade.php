@@ -88,7 +88,7 @@
                                     </div>
                                     <div class="content">
                                         <h4 class="title">Phone</h4>
-                                        <a href="tel:0181-2783091">0181-2783091</a>
+                                        <a href="tel:919814854591">+91 98148-54591</a>
                                         <a href="tel:9814054591">+91 98140-54591</a>
                                     </div>
                                 </li>
@@ -105,7 +105,7 @@
                                     </div>
                                     <div class="content">
                                         <h4 class="title">E-mail Address</h4>
-                                        <a href="mailto:ambedkariti@ymail.com">ambedkariti@ymail.com</a>
+                                        <a href="mailto:info@ambedkar.com">info@ambedkar.com</a>
 
                                     </div>
                                 </li>

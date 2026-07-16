@@ -95,3 +95,11 @@ Route::get('/terms-conditions', function () {
 Route::get('/privacy-policy', function () {
     return view('pages.privacy-policy');
 })->name('privacy-policy');
+
+Route::get('/director-message', function () {
+    return view('pages.director-message');
+})->name('director-message');
+
+Route::get('/car-driving-details', function () {
+    return view('pages.courses.car-driving-details');
+})->name('car-driving-details');

@@ -12,6 +12,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb__content">
+                            <h2 class="title">JCB Training</h2>
                             <nav class="breadcrumb">
                                 <span property="itemListElement" typeof="ListItem">
                                     <a href= "{{ route('home') }}">Home</a>
@@ -58,9 +59,11 @@
                                         data-bs-target="#overview-tab-pane" type="button" role="tab"
                                         aria-controls="overview-tab-pane" aria-selected="true">Course Detail</button>
                                 </li>
-                                {{-- <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum-tab-pane" type="button" role="tab" aria-controls="curriculum-tab-pane" aria-selected="false">Eligibility Criteria</button>
-                                </li> --}}
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab"
+                                        data-bs-target="#curriculum-tab-pane" type="button" role="tab"
+                                        aria-controls="curriculum-tab-pane" aria-selected="false">Course Overview</button>
+                                </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="instructors-tab" data-bs-toggle="tab"
                                         data-bs-target="#instructors-tab-pane" type="button" role="tab"
@@ -76,23 +79,7 @@
                                 <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel"
                                     aria-labelledby="overview-tab" tabindex="0">
                                     <div class="courses__overview-wrap">
-                                        <h3 class="title">Build a Successful Career as a Professional JCB Operator</h3>
-                                        <p align="justify">The JCB Operator Training Course at Dr. B. R. Ambedkar ITI,
-                                            Jalandhar is designed to provide students with the practical skills and
-                                            technical knowledge required to safely operate JCB Backhoe Loaders and
-                                            Earthmoving Equipment. The course combines classroom learning with 100%
-                                            practical field training, preparing students for careers in construction,
-                                            infrastructure, mining, road projects, and industrial sectors.</p>
-                                        <p align="justify">Students gain hands-on experience in excavation, trenching,
-                                            loading, leveling, site preparation, and machine maintenance under the guidance
-                                            of experienced instructors.</p>
-                                        <h3 class="title">Government Approved Certification</h3>
-                                        <p align="justify">Upon successful completion of the course, students receive a
-                                            <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
-                                                ITI, Jalandhar</strong>, enhancing their employment opportunities in
-                                            construction companies, government projects, private contractors, and
-                                            infrastructure industries across India.
-                                        </p>
+
                                         <h3 class="title">Course Duration</h3>
                                         <ul class="about__info-list list-wrap">
                                             <li class="about__info-list-item">
@@ -167,37 +154,28 @@
 
                                     </div>
                                 </div>
-                                {{-- <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel" aria-labelledby="curriculum-tab" tabindex="0">
+                                <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel"
+                                    aria-labelledby="curriculum-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">
-                                        <h3 class="title">Eligibility Criteria</h3>
-                                       <ul class="about__info-list list-wrap">
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">12th Pass Students</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">ITI Students</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Graduates</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Job Seekers</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Freshers</p>
-                                            </li>
-                                            <li class="about__info-list-item">
-                                                <i class="flaticon-angle-right"></i>
-                                                <p class="content">Working Professionals looking for a career switch</p>
-                                            </li>
-                                        </ul>
+                                        <h3 class="title">Build a Successful Career as a Professional JCB Operator</h3>
+                                        <p align="justify">The JCB Operator Training Course at Dr. B. R. Ambedkar ITI,
+                                            Jalandhar is designed to provide students with the practical skills and
+                                            technical knowledge required to safely operate JCB Backhoe Loaders and
+                                            Earthmoving Equipment. The course combines classroom learning with 100%
+                                            practical field training, preparing students for careers in construction,
+                                            infrastructure, mining, road projects, and industrial sectors.</p>
+                                        <p align="justify">Students gain hands-on experience in excavation, trenching,
+                                            loading, leveling, site preparation, and machine maintenance under the guidance
+                                            of experienced instructors.</p>
+                                        <h3 class="title">Government Approved Certification</h3>
+                                        <p align="justify">Upon successful completion of the course, students receive a
+                                            <strong>Government Approved Certificate</strong> from <strong>Dr. B. R. Ambedkar
+                                                ITI, Jalandhar</strong>, enhancing their employment opportunities in
+                                            construction companies, government projects, private contractors, and
+                                            infrastructure industries across India.
+                                        </p>
                                     </div>
-                                </div> --}}
+                                </div>
                                 <div class="tab-pane fade" id="instructors-tab-pane" role="tabpanel"
                                     aria-labelledby="instructors-tab" tabindex="0">
                                     <div class="courses__curriculum-wrap">
@@ -266,7 +244,7 @@
                         <div class="courses__details-sidebar">
 
 
-                              @include('components.course-form')
+                            @include('components.course-form')
 
                         </div>
                     </div>
