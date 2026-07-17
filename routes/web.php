@@ -103,3 +103,11 @@ Route::get('/director-message', function () {
 Route::get('/car-driving-details', function () {
     return view('pages.courses.car-driving-details');
 })->name('car-driving-details');
+
+Route::get('/our-blogs', function () {
+    return view('pages.our-blogs');
+})->name('our-blogs');
+
+Route::get('/blog-details', function () {
+    return view('pages.blog-details');
+})->name('blog-details');

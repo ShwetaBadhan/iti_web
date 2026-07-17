@@ -107,8 +107,12 @@
                                        <li><a href="{{ route('our-gallery') }}">Photo Gallery</a>
 
                                        </li>
+                                     
 
                                        <li><a href="{{ route('our-results') }}">Results</a>
+
+                                       </li>
+                                         <li><a href="{{ route('our-blogs') }}">Our Blogs</a>
 
                                        </li>
                                        <li><a href="{{ route('contact-us') }}">Contact Us</a>
