@@ -141,12 +141,9 @@
                                   </div>
                                   <div class="instructor__content-three">
 
-                                      <h2 class="title">Mr. Singh</h2>
+                                      <h2 class="title">Mr. Kuldeep Singh Dhillon</h2>
                                       <span class="designation">Chairman</span>
-                                      <p align="justify">In a world that is increasingly driven by technology and
-                                          specialized skills, the most powerful asset you can possess is a certified,
-                                          hands-on expertise. Here at our Industrial Training Institute, we don't just
-                                          teach trades; we build careers and fuel industries.</p>
+                                      <p align="justify">I believe the real strength of Punjab lies in its youth. My vision is to make our young generation skilled, confident, and career-ready so they can secure valuable jobs, earn better incomes, and build a brighter future.</p>
 
                                       <div class="tg-button-wrap">
                                           <a href="{{ route('chairman-message') }}" class="btn arrow-btn">Read More <img
