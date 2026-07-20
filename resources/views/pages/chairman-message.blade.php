@@ -36,8 +36,8 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-6 col-md-9">
-                    <div class="about__images-three tg-svg">
-                        <img src="https://www.ambedkariti.com/images/web_images/principal.gif" alt="img">
+                    <div class="">
+                        <img src="{{ url('assets/img/management/dhillon-sir.png') }}" alt="img">
 
                     </div>
                 </div>

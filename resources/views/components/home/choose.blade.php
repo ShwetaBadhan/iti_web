@@ -5,9 +5,9 @@
               <div class="row">
                   <div class="col-lg-5 order-0 order-lg-2">
                       <div class="choose__img" data-aos="fade-left" data-aos-delay="300">
-                          <img src="assets/img/about/choose.png" alt="img">
-                          <a href="https://www.youtube.com/watch?v=b2Az7_lLh3g" class="popup-video"><i
-                                  class="fas fa-play"></i></a>
+                          <img src="assets/img/about/collage.jpeg" alt="img">
+                          {{-- <a href="https://www.youtube.com/watch?v=b2Az7_lLh3g" class="popup-video"><i
+                                  class="fas fa-play"></i></a> --}}
                       </div>
                   </div>
                   <div class="col-lg-7">

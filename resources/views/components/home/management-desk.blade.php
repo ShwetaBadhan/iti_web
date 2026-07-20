@@ -121,7 +121,7 @@
                           <div class="swiper-slide">
                               <div class="instructor__item-three">
                                   <div class="instructor__thumb-three">
-                                      <img src="assets/img/about/h2_instructor03.png" alt="img">
+                                      <img src="assets/img/management/home-sir.png" alt="img">
                                       <div class="shape-one">
                                           <svg width="401" height="394" viewBox="0 0 401 394" fill="none"
                                               xmlns="http://www.w3.org/2000/svg"
