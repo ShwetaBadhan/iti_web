@@ -43,7 +43,7 @@
 
                     <h2>Verify Your Result</h2>
 
-                    <form class="result-form">
+                    <form id="resultForm" class="result-form">
 
                         <select>
                             <option>Select Course</option>
@@ -55,9 +55,12 @@
                             <option value="">Excavator Training</option>
                             <option value="">Motor Mechanic</option>
                             <option value="">Video Editing</option>
+                            <option>Plumber & Drainage</option>
+                            <option>Electrician</option>
+                            <option>Welding</option>
                         </select>
 
-                        <input type="text" placeholder="Enter Serial Number">
+                        <input type="text" placeholder="Enter Roll Number">
 
                         <button type="submit">
                             <i class="fas fa-search"></i>
@@ -71,66 +74,44 @@
 
                 <!-- Show after search -->
 
-                <div class="result-card">
+                <div class="result-card mt-5" id="resultSection" style="display:none;">
 
                     <div class="verified">
                         <i class="fas fa-check-circle"></i>
-                        Result Verified
+                        Certificate Verified Successfully
                     </div>
 
-                    <h3>Carpenter Course</h3>
+                    <div class="row p-4">
 
-                    <div class="student-grid">
+                        <div class="col-lg-6 mb-5">
+                            <h4 class="text-center mb-3">Diploma Certificate</h4>
 
-                        <div class="item">
-                            <span>Name</span>
-                            <strong>Korlapu Ravikiran</strong>
+                            <img src="{{ asset('assets/img/result/certificate.jpeg') }}"
+                                class="img-fluid border rounded shadow">
                         </div>
 
-                        <div class="item">
-                            <span>Father's Name</span>
-                            <strong>Korlapu Prakasha Rao</strong>
-                        </div>
+                        <div class="col-lg-6">
+                            <h4 class="text-center mb-3">Result / Marksheet</h4>
 
-                        <div class="item">
-                            <span>Roll Number</span>
-                            <strong>2344</strong>
-                        </div>
-
-                        <div class="item">
-                            <span>Course</span>
-                            <strong>Carpenter Course</strong>
-                        </div>
-
-                        <div class="item">
-                            <span>Enrollment</span>
-                            <strong>08 Jun 2021</strong>
-                        </div>
-
-                        <div class="item">
-                            <span>Completion</span>
-                            <strong>07 Jun 2022</strong>
-                        </div>
-
-                        <div class="item full">
-                            <span>Address</span>
-                            <strong>
-                                4-20 PS Ichchapuram,
-                                Andhra Pradesh
-                            </strong>
+                            <img src="{{ asset('assets/img/result/marksheet.jpeg') }}"
+                                class="img-fluid border rounded shadow">
                         </div>
 
                     </div>
 
-                    <div class="result-btns">
+                    <div class="text-center pb-4">
 
-                        <a href="#" class="btn1">
+                        <a href="{{ asset('assets/img/result/certificate.jpeg') }}" download class="btn btn-primary me-2">
                             Download Certificate
                         </a>
 
-                        <a href="#" class="btn2">
-                            Print Result
+                        <a href="{{ asset('assets/img/result/marksheet.jpeg') }}" download class="btn btn-warning me-2">
+                            Download Marksheet
                         </a>
+
+                        {{-- <button onclick="window.print()" class="btn btn-success">
+            Print
+        </button> --}}
 
                     </div>
 
@@ -280,3 +261,20 @@
 
     }
 </style>
+@push('scripts')
+    <script>
+        document.getElementById('resultForm').addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            // Frontend only
+            document.getElementById('resultSection').style.display = 'block';
+
+            // Scroll to result
+            document.getElementById('resultSection').scrollIntoView({
+                behavior: 'smooth'
+            });
+
+        });
+    </script>
+@endpush

@@ -105,6 +105,7 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/aos.js"></script>
     <script src="assets/js/main.js"></script>
+    @stack('scripts')
     <script>
         SVGInject(document.querySelectorAll("img.injectable"));
     </script>
