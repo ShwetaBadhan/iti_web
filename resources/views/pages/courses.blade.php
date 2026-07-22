@@ -246,6 +246,75 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="courses__item shine__animate-item">
+                        <div class="courses__item-thumb">
+                            <a href="{{ route('plumbing-details') }}" class="shine__animate-link">
+                                <img src="assets/img/courses/plumbing-course.png" alt="img">
+                            </a>
+                        </div>
+                        <div class="courses__item-content">
+
+                            <h5 class="title"><a href="{{ route('plumbing-details') }}">Plumbing</a></h5>
+
+                            <div class="courses__item-bottom">
+                                <div class="button">
+                                    <a href="{{ route('plumbing-details') }}">
+                                        <span class="text">Enroll Now</span>
+                                        <i class="flaticon-arrow-right"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="courses__item shine__animate-item">
+                        <div class="courses__item-thumb">
+                            <a href="{{ route('electrician-details') }}" class="shine__animate-link">
+                                <img src="assets/img/courses/electrician-course.png" alt="img">
+                            </a>
+                        </div>
+                        <div class="courses__item-content">
+
+                            <h5 class="title"><a href="{{ route('electrician-details') }}">Electrician</a></h5>
+
+                            <div class="courses__item-bottom">
+                                <div class="button">
+                                    <a href="{{ route('electrician-details') }}">
+                                        <span class="text">Enroll Now</span>
+                                        <i class="flaticon-arrow-right"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="courses__item shine__animate-item">
+                        <div class="courses__item-thumb">
+                            <a href="{{ route('welding-details') }}" class="shine__animate-link">
+                                <img src="assets/img/courses/welding-course.png" alt="img">
+                            </a>
+                        </div>
+                        <div class="courses__item-content">
+
+                            <h5 class="title"><a href="{{ route('welding-details') }}">Welding</a></h5>
+
+                            <div class="courses__item-bottom">
+                                <div class="button">
+                                    <a href="{{ route('welding-details') }}">
+                                        <span class="text">Enroll Now</span>
+                                        <i class="flaticon-arrow-right"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
 

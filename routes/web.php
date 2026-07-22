@@ -114,6 +114,18 @@ Route::get('/blog-details', function () {
     return view('pages.blog-details');
 })->name('blog-details');
 
+Route::get('/plumbing-details', function () {
+    return view('pages.courses.plumbing-details');
+})->name('plumbing-details');
+
+Route::get('/electrician-details', function () {
+    return view('pages.courses.electrician-details');
+})->name('electrician-details');
+
+Route::get('/welding-details', function () {
+    return view('pages.courses.welding-details');
+})->name('welding-details');
+
 
 
 Route::post('/contact-submit', [ContactController::class, 'submit'])->name('contact.submit');
