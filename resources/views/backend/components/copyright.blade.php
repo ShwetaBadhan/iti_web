@@ -1,0 +1,5 @@
+  <footer class="d-footer">
+  <div class="">
+    <p class="mb-0 text-center"> &copy; <span class="current-year"></span> Made With ❤️ by Wowtheme7.</p>
+  </div>
+</footer>

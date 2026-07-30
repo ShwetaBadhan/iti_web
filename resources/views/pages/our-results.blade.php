@@ -14,7 +14,7 @@
                             <h3 class="title">Our Results</h3>
                             <nav class="breadcrumb">
                                 <span property="itemListElement" typeof="ListItem">
-                                    <a href= "{{ route('home') }}">Home</a>
+                                    <a href="{{ route('home') }}">Home</a>
                                 </span>
                                 <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
                                 <span property="itemListElement" typeof="ListItem">Our Results</span>
@@ -23,16 +23,6 @@
                     </div>
                 </div>
             </div>
-            <div class="breadcrumb__shape-wrap">
-                <img src="assets/img/others/breadcrumb_shape01.svg" alt="img" class="alltuchtopdown">
-                <img src="assets/img/others/breadcrumb_shape02.svg" alt="img" data-aos="fade-right"
-                    data-aos-delay="300">
-                <img src="assets/img/others/breadcrumb_shape03.svg" alt="img" data-aos="fade-up" data-aos-delay="400">
-                <img src="assets/img/others/breadcrumb_shape04.svg" alt="img" data-aos="fade-down-left"
-                    data-aos-delay="400">
-                <img src="assets/img/others/breadcrumb_shape05.svg" alt="img" data-aos="fade-left"
-                    data-aos-delay="400">
-            </div>
         </section>
         <!-- breadcrumb-area-end -->
 
@@ -40,82 +30,85 @@
         <section class="contact-area section-py-120">
             <div class="container">
                 <div class="result-search-card">
-
                     <h2>Verify Your Result</h2>
 
                     <form id="resultForm" class="result-form">
-
-                        <select>
-                            <option>Select Course</option>
-                            <option value="">Truck Dispatch</option>
-                            <option value="">Fire & Safety</option>
-                            <option value="">Trailer Training</option>
-                            <option value="">Forklift Training</option>
-                            <option value="">JCB Training</option>
-                            <option value="">Excavator Training</option>
-                            <option value="">Motor Mechanic</option>
-                            <option value="">Video Editing</option>
-                            <option>Plumber & Drainage</option>
-                            <option>Electrician</option>
-                            <option>Welding</option>
+                        <select id="courseSelect" required>
+                            <option value="">Select Course</option>
+                            <option value="Electrician">Electrician</option>
+                            <option value="Plumber & Drainage">Plumber & Drainage</option>
+                            <option value="Welding">Welding</option>
+                            <option value="Motor Mechanic">Motor Mechanic</option>
+                            <option value="Forklift Training">Forklift Training</option>
+                            <option value="JCB Training">JCB Training</option>
+                            <option value="Excavator Training">Excavator Training</option>
+                            <option value="Truck Dispatch">Truck Dispatch</option>
+                            <option value="Fire & Safety">Fire & Safety</option>
+                            <option value="Trailer Training">Trailer Training</option>
+                            <option value="Video Editing">Video Editing</option>
                         </select>
 
-                        <input type="text" placeholder="Enter Roll Number">
+                        <input type="text" id="rollInput" placeholder="Enter Roll Number" required>
 
                         <button type="submit">
                             <i class="fas fa-search"></i>
                             Search
                         </button>
-
                     </form>
 
+                    <!-- Error Message -->
+                    <div id="errorMessage" class="alert alert-danger mt-3 text-center" style="display:none;">
+                        <i class="fas fa-exclamation-circle"></i> No result found for this Course and Roll Number.
+                    </div>
                 </div>
 
+<!-- Show after search -->
+<div class="result-card mt-5" id="resultSection" style="display:none;">
+    <div class="verified">
+        <i class="fas fa-check-circle"></i>
+        Certificate Verified Successfully
+    </div>
 
-                <!-- Show after search -->
+    <div class="student-info p-4">
+        <h3 class="text-center mb-4" style="color: #00306e; font-weight: 700;">Student Details</h3>
+        <div class="student-grid">
+            <div class="item">
+                <span>Student Name</span>
+                <strong id="studentName">-</strong>
+            </div>
+            <div class="item">
+                <span>Father's Name</span>
+                <strong id="fatherName">-</strong>
+            </div>
+            <div class="item">
+                <span>Roll Number</span>
+                <strong id="rollNumber">-</strong>
+            </div>
+            <div class="item">
+                <span>Course</span>
+                <strong id="courseName">-</strong>
+            </div>
+            <div class="item">
+                <span>Session</span>
+                <strong id="session">-</strong>
+            </div>
+            <div class="item">
+                <span>Result Status</span>
+                <strong id="status" style="color: #009933;">-</strong>
+            </div>
+        </div>
+    </div>
 
-                <div class="result-card mt-5" id="resultSection" style="display:none;">
+    <!-- Images Container -->
+    <div class="row p-4" id="imagesContainer">
+        <!-- Dynamic images will be inserted here -->
+    </div>
 
-                    <div class="verified">
-                        <i class="fas fa-check-circle"></i>
-                        Certificate Verified Successfully
-                    </div>
-
-                    <div class="row p-4">
-
-                        <div class="col-lg-6 mb-5">
-                            <h4 class="text-center mb-3">Diploma Certificate</h4>
-
-                            <img src="{{ asset('assets/img/result/certificate.jpeg') }}"
-                                class="img-fluid border rounded shadow">
-                        </div>
-
-                        <div class="col-lg-6">
-                            <h4 class="text-center mb-3">Result / Marksheet</h4>
-
-                            <img src="{{ asset('assets/img/result/marksheet.jpeg') }}"
-                                class="img-fluid border rounded shadow">
-                        </div>
-
-                    </div>
-
-                    <div class="text-center pb-4">
-
-                        <a href="{{ asset('assets/img/result/certificate.jpeg') }}" download class="btn btn-primary me-2">
-                            Download Certificate
-                        </a>
-
-                        <a href="{{ asset('assets/img/result/marksheet.jpeg') }}" download class="btn btn-warning me-2">
-                            Download Marksheet
-                        </a>
-
-                        {{-- <button onclick="window.print()" class="btn btn-success">
-            Print
-        </button> --}}
-
-                    </div>
-
-                </div>
+    <!-- Download Buttons -->
+    <div class="text-center pb-4" id="downloadContainer">
+        <!-- Dynamic download buttons will be inserted here -->
+    </div>
+</div>
 
             </div>
         </section>
@@ -127,11 +120,6 @@
 @endsection
 
 <style>
-    .result-area {
-        padding: 80px 0;
-        background: #f6f8fb;
-    }
-
     .result-search-card {
         background: #fff;
         border-radius: 20px;
@@ -159,6 +147,7 @@
         border: 1px solid #ddd;
         border-radius: 10px;
         padding: 0 20px;
+        font-size: 16px;
     }
 
     .result-form button {
@@ -168,6 +157,12 @@
         border-radius: 10px;
         padding: 0 35px;
         font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .result-form button:hover {
+        background: #002050;
     }
 
     .result-card {
@@ -186,19 +181,11 @@
         font-weight: 600;
     }
 
-    .result-card h3 {
-        text-align: center;
-        padding: 30px 0;
-        margin: 0;
-        color: #00306e;
-        font-size: 34px;
-    }
-
     .student-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        padding: 40px;
+        padding: 20px;
     }
 
     .item {
@@ -211,6 +198,7 @@
         display: block;
         color: #888;
         font-size: 14px;
+        margin-bottom: 5px;
     }
 
     .item strong {
@@ -218,35 +206,7 @@
         color: #222;
     }
 
-    .full {
-        grid-column: 1/-1;
-    }
-
-    .result-btns {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        padding: 35px;
-    }
-
-    .btn1 {
-        background: #00306e;
-        color: #fff;
-        padding: 14px 30px;
-        border-radius: 40px;
-        text-decoration: none;
-    }
-
-    .btn2 {
-        background: #f7a707;
-        color: #fff;
-        padding: 14px 30px;
-        border-radius: 40px;
-        text-decoration: none;
-    }
-
     @media(max-width:768px) {
-
         .student-grid {
             grid-template-columns: 1fr;
         }
@@ -258,23 +218,136 @@
         .result-form button {
             height: 55px;
         }
-
     }
 </style>
+
 @push('scripts')
-    <script>
-        document.getElementById('resultForm').addEventListener('submit', function(e) {
+<script>
+// ==========================================
+// MOCK DATABASE (Replace with API call later)
+// ==========================================
+const mockDatabase = [
+    {
+        course: "Electrician",
+        roll_number: "2055",
+        student_name: "VIRENDER",
+        father_name: "RAM SANJIVAN",
+        session: "2017-2019",
+        status: "PASS",
+        images: [
+            { 
+                type: "First Year Marksheet", 
+                src: "{{ asset('assets/img/result/first-year.jpeg') }}",
+                btnText: "Download First Year",
+                btnClass: "btn-info"
+            },
+            { 
+                type: "Second Year Marksheet", 
+                src: "{{ asset('assets/img/result/second-year.jpeg') }}",
+                btnText: "Download Second Year",
+                btnClass: "btn-info"
+            },
+            { 
+                type: "Diploma Certificate", 
+                src: "{{ asset('assets/img/result/dip-certificate.jpeg') }}",
+                btnText: "Download Certificate",
+                btnClass: "btn-primary"
+            }
+        ]
+    },
+    {
+        course: "Plumber & Drainage",
+        roll_number: "1971",
+        student_name: "Gurdeep Bhullar",
+        father_name: "Rakesh Kumar",
+        session: "2005-2006",
+        status: "PASS",
+        images: [
+            { 
+                type: "Marksheet", 
+                src: "{{ asset('assets/img/result/marksheet.jpeg') }}",
+                btnText: "Download Marksheet",
+                btnClass: "btn-info"
+            },
+            { 
+                type: "Diploma Certificate", 
+                src: "{{ asset('assets/img/result/certificate.jpeg') }}",
+                btnText: "Download Certificate",
+                btnClass: "btn-primary"
+            }
+        ]
+    }
+];
 
-            e.preventDefault();
+// ==========================================
+// FORM SUBMISSION LOGIC
+// ==========================================
+document.getElementById('resultForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-            // Frontend only
-            document.getElementById('resultSection').style.display = 'block';
+    // 1. Get input values
+    const selectedCourse = document.getElementById('courseSelect').value;
+    const enteredRoll = document.getElementById('rollInput').value.trim().toUpperCase();
 
-            // Scroll to result
-            document.getElementById('resultSection').scrollIntoView({
-                behavior: 'smooth'
-            });
+    // 2. Get DOM elements
+    const errorMessage = document.getElementById('errorMessage');
+    const resultSection = document.getElementById('resultSection');
+    const imagesContainer = document.getElementById('imagesContainer');
+    const downloadContainer = document.getElementById('downloadContainer');
 
+    // 3. Hide previous results/errors
+    errorMessage.style.display = 'none';
+    resultSection.style.display = 'none';
+    imagesContainer.innerHTML = '';
+    downloadContainer.innerHTML = '';
+
+    // 4. Search in mock database
+    const student = mockDatabase.find(
+        record => record.course === selectedCourse && record.roll_number === enteredRoll
+    );
+
+    // 5. If found, populate and show
+    if (student) {
+        document.getElementById('studentName').textContent = student.student_name;
+        document.getElementById('fatherName').textContent = student.father_name;
+        document.getElementById('rollNumber').textContent = student.roll_number;
+        document.getElementById('courseName').textContent = student.course;
+        document.getElementById('session').textContent = student.session;
+        document.getElementById('status').textContent = student.status;
+
+        // Calculate column width based on number of images
+        const colWidth = student.images.length === 3 ? 'col-lg-4' : 'col-lg-6';
+
+        // Generate images dynamically
+        student.images.forEach((img, index) => {
+            // Create image column
+            const imageCol = document.createElement('div');
+            imageCol.className = `${colWidth} mb-4`;
+            imageCol.innerHTML = `
+                <h4 class="text-center mb-3">${img.type}</h4>
+                <img src="${img.src}" class="img-fluid border rounded shadow" alt="${img.type}" id="image${index}">
+            `;
+            imagesContainer.appendChild(imageCol);
         });
-    </script>
+
+        // Generate download buttons dynamically
+        student.images.forEach((img, index) => {
+            const downloadBtn = document.createElement('a');
+            downloadBtn.href = img.src;
+            downloadBtn.download = '';
+            downloadBtn.className = `btn ${img.btnClass} me-2 mb-2`;
+            downloadBtn.innerHTML = `<i class="fas fa-download"></i> ${img.btnText}`;
+            downloadContainer.appendChild(downloadBtn);
+        });
+
+        // Show result section and scroll to it
+        resultSection.style.display = 'block';
+        resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } 
+    // 6. If not found, show error
+    else {
+        errorMessage.style.display = 'block';
+    }
+});
+</script>
 @endpush
