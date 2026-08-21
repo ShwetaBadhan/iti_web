@@ -105,7 +105,7 @@
                                                    </li>
                                                @empty
                                                    <li>
-                                                       <a href="{{ route('courses') }}">No courses available</a>
+                                                       <a href="{{ route('our-courses') }}">No courses available</a>
                                                    </li>
                                                @endforelse
                                            </ul>
