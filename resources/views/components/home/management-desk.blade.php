@@ -44,7 +44,7 @@
                                           teach trades; we build careers and fuel industries.</p>
 
                                       <div class="tg-button-wrap">
-                                          <a href="{{ route('chairman-message') }}" class="btn arrow-btn">Read More <img
+                                          <a href="{{ route('frontend.chairman') }" class="btn arrow-btn">Read More <img
                                                   src="assets/img/icons/right_arrow.svg" alt="img"
                                                   class="injectable"></a>
                                       </div>
@@ -146,7 +146,7 @@
                                       <p align="justify">I believe the real strength of Punjab lies in its youth. My vision is to make our young generation skilled, confident, and career-ready so they can secure valuable jobs, earn better incomes, and build a brighter future.</p>
 
                                       <div class="tg-button-wrap">
-                                          <a href="{{ route('chairman-message') }}" class="btn arrow-btn">Read More <img
+                                          <a href="{{ route('frontend.chairman') }" class="btn arrow-btn">Read More <img
                                                   src="assets/img/icons/right_arrow.svg" alt="img"
                                                   class="injectable"></a>
                                       </div>

@@ -1,131 +1,201 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Management\RoleController;
+use App\Http\Controllers\Management\PermissionController;
+use App\Http\Controllers\Management\UserController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\SliderController;
+use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ChairmanMessageController;
+use App\Http\Controllers\DirectorMessageController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\GeneralSettingController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ResultController;
+use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\SeoController;
+use App\Http\Controllers\FeeReceiptController;
+use App\Http\Controllers\DashboardController;
+// ==========================================
+// 1. AUTHENTICATION ROUTES (Top Priority)
+// ==========================================
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login'])->name('login.store');
+});
 
-
-Route::get('/', function () {
-    return view('pages.index');
-})->name('home');
-
-
-Route::get('/about-us', function () {
-    return view('pages.about-us');
-})->name('about');
-
-Route::get('/chairman-message', function () {
-    return view('pages.chairman-message');
-})->name('chairman-message');
-
-Route::get('/our-team', function () {
-    return view('pages.our-team');
-})->name('our-team');
-
-Route::get('/courses', function () {
-    return view('pages.courses');
-})->name('courses');
-
-Route::get('/course-details', function () {
-    return view('pages.courses.course-details');
-})->name('course-details');
-
-Route::get('/trade-courses', function () {
-    return view('pages.courses.trade-courses');
-})->name('trade-courses');
-
-Route::get('/auto-electrician', function () {
-    return view('pages.auto-electrician.index');
-})->name('auto-electrician');
-
-Route::get('/automobile', function () {
-    return view('pages.automobile.index');
-})->name('automobile');
-
-Route::get('/our-mission', function () {
-    return view('pages.our-mission');
-})->name('our-mission');
-
-Route::get('/truck-dispatch-details', function () {
-    return view('pages.courses.truck-dispatch-details');
-})->name('truck-dispatch-details');
-
-Route::get('/fire-safety-details', function () {
-    return view('pages.courses.fire-safety-details');
-})->name('fire-safety-details');
-
-Route::get('/trailer-training-details', function () {
-    return view('pages.courses.trailer-training-details');
-})->name('trailer-training-details');
-
-Route::get('/forklift-training-details', function () {
-    return view('pages.courses.forklift-training-details');
-})->name('forklift-training-details');
-
-Route::get('/jcb-training-details', function () {
-    return view('pages.courses.jcb-training-details');
-})->name('jcb-training-details');
-
-Route::get('/excavator-training-details', function () {
-    return view('pages.courses.excavator-training-details');
-})->name('excavator-training-details');
-
-
-Route::get('/motor-mechanic-details', function () {
-    return view('pages.courses.motor-mechanic-details');
-})->name('motor-mechanic-details');
-
-Route::get('/video-editing-details', function () {
-    return view('pages.courses.video-editing-details');
-})->name('video-editing-details');
-
-Route::get('/our-gallery', function () {
-    return view('pages.our-gallery');
-})->name('our-gallery');
-
-Route::get('/contact-us', function () {
-    return view('pages.contact-us');
-})->name('contact-us');
-
-Route::get('/our-results', function () {
-    return view('pages.our-results');
-})->name('our-results');
-
-Route::get('/terms-conditions', function () {
-    return view('pages.terms-conditions');
-})->name('terms-conditions');
-
-Route::get('/privacy-policy', function () {
-    return view('pages.privacy-policy');
-})->name('privacy-policy');
-
-Route::get('/director-message', function () {
-    return view('pages.director-message');
-})->name('director-message');
-
-Route::get('/car-driving-details', function () {
-    return view('pages.courses.car-driving-details');
-})->name('car-driving-details');
-
-Route::get('/our-blogs', function () {
-    return view('pages.our-blogs');
-})->name('our-blogs');
-
-Route::get('/blog-details', function () {
-    return view('pages.blog-details');
-})->name('blog-details');
-
-Route::get('/plumbing-details', function () {
-    return view('pages.courses.plumbing-details');
-})->name('plumbing-details');
-
-Route::get('/electrician-details', function () {
-    return view('pages.courses.electrician-details');
-})->name('electrician-details');
-
-Route::get('/welding-details', function () {
-    return view('pages.courses.welding-details');
-})->name('welding-details');
-
-
-
+// ==========================================
+// 2. FRONTEND PUBLIC ROUTES
+// ==========================================
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about-us', [HomeController::class, 'about'])->name('about');
+Route::get('/chairman', [HomeController::class, 'chairman'])->name('frontend.chairman');
+Route::get('/director', [HomeController::class, 'director'])->name('frontend.director');
+Route::get('/our-team', [HomeController::class, 'team'])->name('our-team');
+Route::get('/our-mission', [HomeController::class, 'mission'])->name('our-mission');
+Route::get('/our-results', [HomeController::class, 'results'])->name('our-results');
+Route::get('/our-gallery', [HomeController::class, 'gallery'])->name('our-gallery');
+Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact-us');
+Route::get('/terms-conditions', [HomeController::class, 'terms'])->name('terms-conditions');
+Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy-policy');
+Route::get('/our-courses', [HomeController::class, 'courses'])->name('our-courses');
+Route::get('/our-blogs', [HomeController::class, 'blogs'])->name('our-blogs');
+Route::get('/blog/{slug}', [HomeController::class, 'blogDetails'])->name('blog.details');
 Route::post('/contact-submit', [ContactController::class, 'submit'])->name('contact.submit');
+Route::get('/search-result', [ResultController::class, 'searchResult'])->name('search.result');
+
+// ==========================================
+// 3. AUTHENTICATED ROUTES (Backend/Dashboard)
+// ==========================================
+Route::middleware('auth')->group(function () {
+    
+    // Dashboard
+   
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Logout
+    Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+    // Sliders
+    Route::get('/sliders', [SliderController::class, 'index'])->name('sliders.index');
+    Route::post('/sliders', [SliderController::class, 'store'])->name('sliders.store');
+    Route::put('/sliders/{slider}', [SliderController::class, 'update'])->name('sliders.update');
+    Route::delete('/sliders/{slider}', [SliderController::class, 'destroy'])->name('sliders.destroy');
+    Route::post('/sliders/{slider}/toggle', [SliderController::class, 'toggleStatus'])->name('sliders.toggle-status');
+
+    // Testimonials
+    Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials.index');
+    Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
+    Route::put('/testimonials/{testimonial}', [TestimonialController::class, 'update'])->name('testimonials.update');
+    Route::delete('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy');
+    Route::post('/testimonials/{testimonial}/toggle', [TestimonialController::class, 'toggleStatus'])->name('testimonials.toggle-status');
+
+    // FAQs
+    Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
+    Route::post('/faqs', [FaqController::class, 'store'])->name('faqs.store');
+    Route::put('/faqs/{faq}', [FaqController::class, 'update'])->name('faqs.update');
+    Route::delete('/faqs/{faq}', [FaqController::class, 'destroy'])->name('faqs.destroy');
+    Route::post('/faqs/{faq}/toggle', [FaqController::class, 'toggleStatus'])->name('faqs.toggle-status');
+
+    // Chairman Message
+    Route::get('/chairman-message', [ChairmanMessageController::class, 'index'])->name('chairman-message.index');
+    Route::post('/chairman-message', [ChairmanMessageController::class, 'storeOrUpdate'])->name('chairman-message.store');
+
+    // Director Message
+    Route::get('/director-message', [DirectorMessageController::class, 'index'])->name('director-message.index');
+    Route::post('/director-message', [DirectorMessageController::class, 'storeOrUpdate'])->name('director-message.store');
+
+    // Backend Courses (use /admin prefix)
+   
+        Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+        Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
+        Route::post('/courses', [CourseController::class, 'store'])->name('courses.store');
+        Route::get('/courses/{course}/edit', [CourseController::class, 'edit'])->name('courses.edit');
+        Route::put('/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
+        Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy');
+   
+
+    // Gallery
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+    Route::post('/gallery', [GalleryController::class, 'store'])->name('gallery.store');
+    Route::put('/gallery/{gallery}', [GalleryController::class, 'update'])->name('gallery.update');
+    Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
+    Route::post('/gallery/{gallery}/toggle', [GalleryController::class, 'toggleStatus'])->name('gallery.toggle-status');
+
+    // Blogs (Backend)
+    Route::resource('blogs', BlogController::class);
+    Route::post('/blogs/{blog}/toggle', [BlogController::class, 'toggleStatus'])->name('blogs.toggle-status');
+
+    // General Settings
+    Route::get('/general', [GeneralSettingController::class, 'index'])->name('general-settings');
+    Route::post('/general', [GeneralSettingController::class, 'storeOrUpdate'])->name('general-settings.update');
+
+    // Students
+    Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+    Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
+    Route::post('/students', [StudentController::class, 'store'])->name('students.store');
+    Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('students.edit');
+    Route::put('/students/{student}', [StudentController::class, 'update'])->name('students.update');
+    Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
+
+    // Roles & Permissions
+    Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
+    Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
+    Route::put('/roles/{role}', [RoleController::class, 'update'])->name('roles.update');
+    Route::delete('/roles/{role}', [RoleController::class, 'destroy'])->name('roles.destroy');
+    Route::get('/roles/{role}/permissions', [RoleController::class, 'getPermissionsModal'])->name('roles.permissions.modal');
+    Route::put('/roles/{role}/permissions', [RoleController::class, 'updatePermissions'])->name('roles.updatePermissions');
+
+    // Permissions
+    Route::get('/permissions', [PermissionController::class, 'index'])->name('permissions.index');
+    Route::post('/permissions', [PermissionController::class, 'store'])->name('permissions.store');
+    Route::put('/permissions/{permission}', [PermissionController::class, 'update'])->name('permissions.update');
+    Route::delete('/permissions/{permission}', [PermissionController::class, 'destroy'])->name('permissions.destroy');
+
+    // Users
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::post('/users', [UserController::class, 'store'])->name('users.store');
+    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+
+    // results
+      Route::get('/results', [ResultController::class, 'index'])->name('results.index');
+    Route::post('/results', [ResultController::class, 'store'])->name('results.store');
+    Route::put('/results/{result}', [ResultController::class, 'update'])->name('results.update');
+    Route::delete('/results/{result}', [ResultController::class, 'destroy'])->name('results.destroy');
+    Route::post('/results/{result}/toggle', [ResultController::class, 'toggleStatus'])->name('results.toggle-status');
+
+Route::get('/certificates', [CertificateController::class, 'index'])->name('certificates.index');
+    Route::get('/generate/{id}/{type}', [CertificateController::class, 'generate'])->name('certificates.generate');
+// Form 5 Certificate Generate Route (GET method with ID)
+Route::get('/form5/generate/{id}', [CertificateController::class, 'generateForm5'])->name('form5.generate');
+
+
+    Route::get('/seo', [SeoController::class, 'index'])->name('seo.index');
+    Route::post('/global', [SeoController::class, 'updateGlobal'])->name('global.update');
+    Route::post('/page/{pageName}', [SeoController::class, 'updatePage'])->name('page.update');
+    Route::post('/course/{id}', [SeoController::class, 'updateCourse'])->name('course.update');
+
+    // If using PUT (Recommended)
+// Route::put('/seo/course/{id}', [SeoController::class, 'updateCourse'])->name('course.update');
+
+// OR if you are using POST, keep it as POST, but ensure the name matches:
+Route::post('/seo/course/{id}', [SeoController::class, 'updateCourse'])->name('course.update');
+});
+
+
+Route::prefix('fees')->name('fees.')->group(function () {
+    Route::get('/', [FeeReceiptController::class, 'index'])->name('index');
+    Route::get('/create', [FeeReceiptController::class, 'create'])->name('create');
+    Route::post('/', [FeeReceiptController::class, 'store'])->name('store');
+    
+
+    Route::put('/{receipt}', [FeeReceiptController::class, 'update'])->name('update');
+    Route::delete('/{receipt}', [FeeReceiptController::class, 'destroy'])->name('destroy');
+    
+    Route::get('/{id}/print', [FeeReceiptController::class, 'print'])->name('print');
+    Route::get('/student/{id}', [FeeReceiptController::class, 'getStudentDetails'])->name('student.details');
+});
+
+// ==========================================
+// 4. CATCH-ALL COURSE ROUTE (MUST BE LAST)
+// ==========================================
+Route::get('/{slug}', [HomeController::class, 'courseDetails'])
+     ->where('slug', '[a-zA-Z0-9\-]+')
+     ->name('course.details');
+
+
+
+
+
+

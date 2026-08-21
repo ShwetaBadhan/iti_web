@@ -1,20 +1,28 @@
 @extends('layouts.master')
-@section('title','Course Details')
+@section('title', $course->name)
 @section('content')
 
-<!-- breadcrumb-area -->
-        <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/breadcrumb_bg.jpg">
+    <!-- main-area -->
+    <main class="main-area fix">
+
+        <!-- breadcrumb-area -->
+        <div class="breadcrumb__area breadcrumb__bg breadcrumb__bg-two" data-background="assets/img/bg/breadcrumb_bg.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb__content">
-                            <h3 class="title">Course Details</h3>
+                            {{-- ✅ Dynamic Breadcrumb Title --}}
+                            <h3 class="title">{{ $course->name }}</h3>
                             <nav class="breadcrumb">
                                 <span property="itemListElement" typeof="ListItem">
                                     <a href="{{ route('home') }}">Home</a>
                                 </span>
                                 <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
-                                <span property="itemListElement" typeof="ListItem">Course Details</span>
+                                <span property="itemListElement" typeof="ListItem">
+                                    <a href="">Courses</a>
+                                </span>
+                                <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
+                                <span property="itemListElement" typeof="ListItem">{{ $course->name }}</span>
                             </nav>
                         </div>
                     </div>
@@ -27,55 +35,102 @@
                 <img src="assets/img/others/breadcrumb_shape04.svg" alt="img" data-aos="fade-down-left" data-aos-delay="400">
                 <img src="assets/img/others/breadcrumb_shape05.svg" alt="img" data-aos="fade-left" data-aos-delay="400">
             </div>
-        </section>
+        </div>
         <!-- breadcrumb-area-end -->
-   <!-- truck-dispatch -->
-        <section id="truck-dispatch" class="about-area tg-motion-effects section-py-120">
-            <div class="container-fluid">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-6 col-md-9">
-                        <div class="about__images">
-                            <img src="assets/img/courses/truck-final.png" alt="img" class="main-img">
-                           
+
+        <!-- courses-details-area -->
+        <section class="courses__details-area section-py-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8">
+                        <div class="courses__details-thumb">
+                            {{-- ✅ Dynamic Detail Image --}}
+                            <img src="{{ asset('storage/' . $course->detail_image) }}" alt="{{ $course->name }}">
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="about__content">
-                            <div class="section__title">
-                                <span class="sub-title">Truck Dispatch</span>
-                                <h2 class="title">
-                                    Learn Professional 
-                                    <span class="position-relative">
-                                        <svg x="0px" y="0px" preserveAspectRatio="none" viewBox="0 0 209 59" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4.74438 7.70565C69.7006 -1.18799 136.097 -2.38304 203.934 4.1205C207.178 4.48495 209.422 7.14626 208.933 10.0534C206.793 23.6481 205.415 36.5704 204.801 48.8204C204.756 51.3291 202.246 53.5582 199.213 53.7955C136.093 59.7623 74.1922 60.5985 13.5091 56.3043C10.5653 56.0924 7.84371 53.7277 7.42158 51.0325C5.20725 38.2627 2.76333 25.6511 0.0898448 13.1978C-0.465589 10.5873 1.61173 8.1379 4.73327 7.70565" fill="currentcolor" />
-                                        </svg>
-                                        Truck Dispatching
-                                    </span>
-                                    Anywhere, Anytime
-                                </h2>
-                            </div>
-                            <p class="desc" align="justify">Our Truck Dispatch Training Program is designed to equip students with the practical knowledge and industry expertise required to build a successful career in the transportation and logistics industry. Learn freight management, load booking, route planning, carrier communication, broker negotiations, and transportation management systems from experienced professionals.</p>
-                            <ul class="about__info-list list-wrap">
-                                <li class="about__info-list-item">
-                                    <i class="flaticon-angle-right"></i>
-                                    <p class="content">The Most Experienced Industry Trainers</p>
+                        <div class="courses__details-content">
+
+                            {{-- ✅ Dynamic Main Title --}}
+                            <h2 class="title">{{ $course->name }}</h2>
+
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-tab-pane" type="button" role="tab" aria-controls="overview-tab-pane" aria-selected="true">Course Detail</button>
                                 </li>
-                                <li class="about__info-list-item">
-                                    <i class="flaticon-angle-right"></i>
-                                    <p class="content">Access Your Classes Anywheree</p>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum-tab-pane" type="button" role="tab" aria-controls="curriculum-tab-pane" aria-selected="false">Course Overview</button>
                                 </li>
-                                <li class="about__info-list-item">
-                                    <i class="flaticon-angle-right"></i>
-                                    <p class="content">Flexible Learning Schedule</p>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="instructors-tab" data-bs-toggle="tab" data-bs-target="#instructors-tab-pane" type="button" role="tab" aria-controls="instructors-tab-pane" aria-selected="false">Downloads</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews-tab-pane" type="button" role="tab" aria-controls="reviews-tab-pane" aria-selected="false">Career Opportunities</button>
                                 </li>
                             </ul>
-                           
+
+                            <div class="tab-content" id="myTabContent">
+                                
+                                <!-- Tab 1: Course Detail -->
+                                <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel" aria-labelledby="overview-tab" tabindex="0">
+                                    <div class="courses__overview-wrap">
+                                        {{-- ✅ Dynamic Content from Database --}}
+                                        {!! $course->course_detail !!}
+                                    </div>
+                                </div>
+
+                                <!-- Tab 2: Course Overview -->
+                                <div class="tab-pane fade" id="curriculum-tab-pane" role="tabpanel" aria-labelledby="curriculum-tab" tabindex="0">
+                                    <div class="courses__curriculum-wrap">
+                                        {{-- ✅ Dynamic Content from Database --}}
+                                        {!! $course->course_overview !!}
+                                    </div>
+                                </div>
+
+                                <!-- Tab 3: Downloads -->
+                                <div class="tab-pane fade" id="instructors-tab-pane" role="tabpanel" aria-labelledby="instructors-tab" tabindex="0">
+                                    <div class="courses__curriculum-wrap">
+                                        <h3 class="title">Download Brochures & Resources</h3>
+                                        
+                                        @if($course->downloads && count($course->downloads) > 0)
+                                            <ul class="about__info-list list-wrap">
+                                                @foreach($course->downloads as $download)
+                                                    <li class="about__info-list-item mb-2">
+                                                        <i class="flaticon-angle-right"></i>
+                                                        <a href="{{ asset('storage/' . $download['file']) }}" class="btn btn-two arrow-btn" download>
+                                                            {{ $download['name'] }} <img src="assets/img/icons/right_arrow.svg" alt="img" class="injectable">
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @else
+                                            <p class="text-muted">No downloads available for this course yet.</p>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <!-- Tab 4: Career Opportunities -->
+                                <div class="tab-pane fade" id="reviews-tab-pane" role="tabpanel" aria-labelledby="reviews-tab" tabindex="0">
+                                    <div class="courses__rating-wrap">
+                                        <h2 class="title">Career Opportunities</h2>
+                                        {{-- ✅ Dynamic Content from Database --}}
+                                        {!! $course->career_opportunities !!}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="courses__details-sidebar">
+                            @include('components.course-form')
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- truck-dispatch-end -->
+        <!-- courses-details-area-end -->
 
+    </main>
+    <!-- main-area-end -->
 
 @endsection

@@ -3,31 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description"
-    content="Modern Education Admin Dashboard for schools, colleges, universities, and eLearning platforms. Includes student and course management, attendance, exams, payments, analytics, and a fully responsive clean UI—ideal for LMS, coaching centers, and academic admin systems.">
-  <meta name="keywords"
-    content="Education Admin Dashboard, School Admin Panel, College Dashboard, University Dashboard, LMS Dashboard, eLearning Admin Template, Student Management System, Course Management, Education Template, Study Dashboard, Online Learning Dashboard, Academic Admin Panel, Bootstrap Dashboard, React Education Dashboard, Next.js Education Template">
-  <meta name="robots" content="INDEX,FOLLOW">
+ 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Title -->
-  <title>Edudash - School, College & LMS Admin Dashboard Template | Bootstrap 5</title>
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+  <title>Dashboard</title>
+  {{-- <link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16"> --}}
+
+   <!-- Favicon -->
+    @if (isset($settings) && $settings->favicon)
+        <link rel="icon" type="image/png" href="{{ asset('storage/' . $settings->favicon) }}" sizes="16x16">
+    @else
+        <link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16">
+    @endif
   <!-- remix icon font css  -->
-  <link rel="stylesheet" href="assets/css/remixicon.css">
+  <link rel="stylesheet" href="{{ url ('css/remixicon.css')}}">
   <!-- BootStrap css -->
-  <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url ('css/lib/bootstrap.min.css')}}">
   <!-- Apex Chart css -->
-  <link rel="stylesheet" href="assets/css/lib/apexcharts.css">
+  <link rel="stylesheet" href="{{ url ('css/lib/apexcharts.css')}}">
   <!-- Data Table css -->
-  <link rel="stylesheet" href="assets/css/lib/dataTables.min.css">
+  <link rel="stylesheet" href="{{ url ('css/lib/dataTables.min.css')}}">
   <!-- Date picker css -->
-  <link rel="stylesheet" href="assets/css/lib/flatpickr.min.css">
+  <link rel="stylesheet" href="{{ url ('css/lib/flatpickr.min.css')}}">
   <!-- Calendar css -->
-  <link rel="stylesheet" href="assets/css/lib/full-calendar.css">
+  <link rel="stylesheet" href="{{ url ('css/lib/full-calendar.css')}}">
   <!-- calendar -->
-  <link rel="stylesheet" href="assets/css/lib/calendar.css">
+  <link rel="stylesheet" href="{{ url ('css/lib/calendar.css')}}">
   <!-- main css -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="{{ url ('css/style.css')}}">
+  
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+
+<style>
+    /* SweetAlert ko chhota aur clean dikhane ke liye */
+    .swal2-popup {
+        font-size: 1rem !important;
+        width: 22em !important;
+        padding: 1.25rem !important;
+    }
+    
+    .swal2-title {
+        font-size: 1.5rem !important;
+        font-weight: 600 !important;
+        margin: 0 0 0.4em !important;
+    }
+    
+    .swal2-html-container {
+        font-size: 1rem !important;
+        margin: 0 !important;
+    }
+{{--     
+    .swal2-icon {
+        width: 3em !important;
+        height: 3em !important;
+        margin: 1.5em auto 1.25em !important;
+    } --}}
+    
+    .swal2-icon .swal2-icon-content {
+        font-size: 2.5em !important;
+    }
+    
+</style>
 </head>
 
 <body>
@@ -38,7 +76,7 @@
   <!-- Theme Customization Structure Start -->
 <div class="body-overlay"></div>
 
-
+<main class="dashboard-main">
 @include('backend.components.header')
 @include('backend.components.sidebar')
 
@@ -46,25 +84,72 @@
 
 @include('backend.components.copyright')
 
-
+</main>
 
 
   <!-- jQuery library js -->
-  <script src="assets/js/lib/jquery-3.7.1.min.js"></script>
+  <script src="{{ url ('js/lib/jquery-3.7.1.min.js')}}"></script>
   <!-- Bootstrap js -->
-  <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+  <script src="{{ url ('js/lib/bootstrap.bundle.min.js')}}"></script>
   <!-- Apex Chart js -->
-  <script src="assets/js/lib/apexcharts.min.js"></script>
+  <script src="{{ url ('js/lib/apexcharts.min.js')}}"></script>
   <!-- Iconify Font js -->
-  <script src="assets/js/lib/iconify-icon.min.js"></script>
+  <script src="{{ url ('js/lib/iconify-icon.min.js')}}"></script>
   <!-- Data Table js -->
-  <script src="assets/js/lib/dataTables.min.js"></script>
+  <script src="{{ url ('js/lib/dataTables.min.js')}}"></script>
   
   <!-- jQuery UI js -->
-  <script src="assets/js/lib/jquery-ui.min.js"></script>
+  <script src="{{ url ('js/lib/jquery-ui.min.js')}}"></script>
   
   <!-- main js -->
-  <script src="assets/js/app.js"></script>
+  <script src="{{ url ('js/app.js')}}"></script>
+     <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+
+       <script>
+    let table = new DataTable('#dataTable');
+
+    // ✅ Data Table start
+    $('.data-table').each(function () {
+        const $table = $(this);
+        const tableInstance = new DataTable(this);
+
+        // Handle search input (inside same wrapper)
+        $table.closest('.dataTable-wrapper').find('.dt-search .dt-input').on('keyup', function () {
+            tableInstance.search(this.value).draw();
+        });
+
+        // Handle page length change (inside same wrapper)
+        $table.closest('.dataTable-wrapper').find('.dt-length .dt-input').on('change', function () {
+            const value = $(this).val();
+            tableInstance.page.len(value).draw();
+        });
+    });
+    // ✅ Data Table end
+
+    // Sidebar js start
+    $('.my-sidebar-btn').on('click', function () {
+        $('.my-sidebar').addClass('active');
+        $('.overlay').addClass('active');
+    });
+    $('.close-my-sidebar, .overlay').on('click', function () {
+        $('.my-sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+    });
+
+
+    $('.edit-sidebar-btn').on('click', function () {
+        $('.edit-sidebar').addClass('active');
+        $('.overlay').addClass('active');
+    });
+    $('.close-edit-sidebar, .overlay').on('click', function () {
+        $('.edit-sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+    });
+    // Sidebar js end
+
+</script>
 
 <script>
   // ============================ Revenue Statistics Chart start ===============================
@@ -409,7 +494,7 @@
   // ============================= Calendar Js End =================================
 
 </script>
-
+@stack('scripts')
 </body>
 
 </html>

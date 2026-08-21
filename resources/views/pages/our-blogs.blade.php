@@ -2,7 +2,6 @@
 @section('title','Our Blogs')
 @section('content')
 
-
    <!-- main-area -->
     <main class="main-area fix">
 
@@ -38,27 +37,44 @@
         <section class="blog-area section-py-120">
             <div class="container">
                 <div class="row gutter-20">
-                     <div class="col-lg-4 col-md-6">
-                        <div class="blog__post-item-six shine__animate-item">
-                            <div class="blog__post-thumb-six">
-                                <a href="{{ route('blog-details') }}" class="shine__animate-link"><img src="assets/img/blog/blog_post01.jpg" alt="img"></a>
-                                {{-- <a href="blog.html" class="post-tag-four">Cooking</a> --}}
-                            </div>
-                            <div class="blog__post-content-six">
-                                <div class="blog__post-meta">
-                                    <ul class="list-wrap">
-                                        <li><i class="flaticon-calendar"></i>20 July, 2024</li>
-                                        <li><i class="flaticon-user-1"></i>by <a href="{{ route('blog-details') }}">Admin</a></li>
-                                    </ul>
-                                </div>
-                                <h2 class="title"><a href="{{ route('blog-details') }}">Learn from Anywhere with Our eLearning Platform</a></h2>
-                                <a href="{{ route('blog-details') }}" class="btn arrow-btn">Read More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
-                            </div>
-                        </div>
-                    </div>
                     
+                    @if(isset($blogs) && $blogs->isNotEmpty())
+                        @foreach($blogs as $blog)
+                            <div class="col-lg-4 col-md-6">
+                                <div class="blog__post-item-six shine__animate-item">
+                                    <div class="blog__post-thumb-six">
+                                        {{-- ✅ Dynamic Link & Image --}}
+                                        <a href="{{ route('blog.details', $blog->slug) }}" class="shine__animate-link">
+                                            <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}">
+                                        </a>
+                                    </div>
+                                    <div class="blog__post-content-six">
+                                        <div class="blog__post-meta">
+                                            <ul class="list-wrap">
+                                                {{-- ✅ Dynamic Date --}}
+                                                <li><i class="flaticon-calendar"></i>{{ $blog->created_at->format('d F, Y') }}</li>
+                                                {{-- ✅ Dynamic Author --}}
+                                                <li><i class="flaticon-user-1"></i>by <a href="{{ route('blog.details', $blog->slug) }}">{{ $blog->author ?? 'Admin' }}</a></li>
+                                            </ul>
+                                        </div>
+                                        {{-- ✅ Dynamic Title --}}
+                                        <h2 class="title">
+                                            <a href="{{ route('blog.details', $blog->slug) }}">{{ $blog->title }}</a>
+                                        </h2>
+                                        <a href="{{ route('blog.details', $blog->slug) }}" class="btn arrow-btn">
+                                            Read More <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="col-12 text-center py-5">
+                            <h4 class="text-muted">No blog posts available at the moment.</h4>
+                        </div>
+                    @endif
+
                 </div>
-              
             </div>
         </section>
         <!-- blog-area-end -->

@@ -12829,7 +12829,13 @@ input[type=date] {
 .modal-footer {
   border-color: var(--input-form-light);
 }
+.modal { z-index: 9999 !important; }
+.modal-backdrop { z-index: 9998 !important; }
+.modal-backdrop.show
 
+ {
+    display: none !important;
+}
 /* === modal css end === */
 /* === nav-tabs css start === */
 /* Bordered Tab Css Start */
@@ -14887,7 +14893,7 @@ table.dataTable td.dt-type-date {
   display: flex;
   flex-wrap: wrap;
   flex-flow: column;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   transition: all 0.3s;
 }
 

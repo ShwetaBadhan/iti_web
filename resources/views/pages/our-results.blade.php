@@ -223,130 +223,105 @@
 
 @push('scripts')
 <script>
-// ==========================================
-// MOCK DATABASE (Replace with API call later)
-// ==========================================
-const mockDatabase = [
-    {
-        course: "Electrician",
-        roll_number: "2055",
-        student_name: "VIRENDER",
-        father_name: "RAM SANJIVAN",
-        session: "2017-2019",
-        status: "PASS",
-        images: [
-            { 
-                type: "First Year Marksheet", 
-                src: "{{ asset('assets/img/result/first-year.jpeg') }}",
-                btnText: "Download First Year",
-                btnClass: "btn-info"
-            },
-            { 
-                type: "Second Year Marksheet", 
-                src: "{{ asset('assets/img/result/second-year.jpeg') }}",
-                btnText: "Download Second Year",
-                btnClass: "btn-info"
-            },
-            { 
-                type: "Diploma Certificate", 
-                src: "{{ asset('assets/img/result/dip-certificate.jpeg') }}",
-                btnText: "Download Certificate",
-                btnClass: "btn-primary"
-            }
-        ]
-    },
-    {
-        course: "Plumber & Drainage",
-        roll_number: "1971",
-        student_name: "Gurdeep Bhullar",
-        father_name: "Rakesh Kumar",
-        session: "2005-2006",
-        status: "PASS",
-        images: [
-            { 
-                type: "Marksheet", 
-                src: "{{ asset('assets/img/result/marksheet.jpeg') }}",
-                btnText: "Download Marksheet",
-                btnClass: "btn-info"
-            },
-            { 
-                type: "Diploma Certificate", 
-                src: "{{ asset('assets/img/result/certificate.jpeg') }}",
-                btnText: "Download Certificate",
-                btnClass: "btn-primary"
-            }
-        ]
-    }
-];
-
-// ==========================================
-// FORM SUBMISSION LOGIC
-// ==========================================
-document.getElementById('resultForm').addEventListener('submit', function(e) {
+document.getElementById('resultForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
     // 1. Get input values
     const selectedCourse = document.getElementById('courseSelect').value;
     const enteredRoll = document.getElementById('rollInput').value.trim().toUpperCase();
-
+    
     // 2. Get DOM elements
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
     const errorMessage = document.getElementById('errorMessage');
     const resultSection = document.getElementById('resultSection');
     const imagesContainer = document.getElementById('imagesContainer');
     const downloadContainer = document.getElementById('downloadContainer');
 
-    // 3. Hide previous results/errors
+    // 3. UI Reset & Loading State
     errorMessage.style.display = 'none';
     resultSection.style.display = 'none';
     imagesContainer.innerHTML = '';
-    downloadContainer.innerHTML = '';
+    downloadContainer.innerHTML = ''; // Ab hum buttons card ke andar hi dalenge
+    
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+    submitBtn.disabled = true;
 
-    // 4. Search in mock database
-    const student = mockDatabase.find(
-        record => record.course === selectedCourse && record.roll_number === enteredRoll
-    );
+    try {
+        // 4. Fetch data from Laravel Backend
+        const response = await fetch(`{{ route('search.result') }}?course=${encodeURIComponent(selectedCourse)}&roll_number=${encodeURIComponent(enteredRoll)}`);
+        const data = await response.json();
 
-    // 5. If found, populate and show
-    if (student) {
-        document.getElementById('studentName').textContent = student.student_name;
-        document.getElementById('fatherName').textContent = student.father_name;
-        document.getElementById('rollNumber').textContent = student.roll_number;
-        document.getElementById('courseName').textContent = student.course;
-        document.getElementById('session').textContent = student.session;
-        document.getElementById('status').textContent = student.status;
+        // 5. If found, populate and show
+        if (data.found && data.data) {
+            const student = data.data;
+            
+            document.getElementById('studentName').textContent = student.student_name;
+            document.getElementById('fatherName').textContent = student.father_name || 'N/A';
+            document.getElementById('rollNumber').textContent = student.roll_number;
+            document.getElementById('courseName').textContent = student.course;
+            document.getElementById('session').textContent = student.session || 'N/A';
+            document.getElementById('status').textContent = student.status;
 
-        // Calculate column width based on number of images
-        const colWidth = student.images.length === 3 ? 'col-lg-4' : 'col-lg-6';
+            const docs = student.documents || [];
+            
+            // Dynamic column width based on number of documents
+            const colWidth = docs.length >= 2 ? 'col-lg-6' : 'col-lg-12';
 
-        // Generate images dynamically
-        student.images.forEach((img, index) => {
-            // Create image column
-            const imageCol = document.createElement('div');
-            imageCol.className = `${colWidth} mb-4`;
-            imageCol.innerHTML = `
-                <h4 class="text-center mb-3">${img.type}</h4>
-                <img src="${img.src}" class="img-fluid border rounded shadow" alt="${img.type}" id="image${index}">
-            `;
-            imagesContainer.appendChild(imageCol);
-        });
+            // Generate PDF/Image cards dynamically
+            docs.forEach((doc, index) => {
+                const isPdf = doc.src.toLowerCase().includes('.pdf');
+                
+                // Preview content: iframe for PDF, img for images
+                let previewContent = '';
+                if (isPdf) {
+                    previewContent = `
+                        <div class="border rounded shadow-sm bg-light mb-3" style="height: 350px; overflow: hidden;">
+                            <iframe src="${doc.src}#toolbar=0" width="100%" height="100%" style="border: none;"></iframe>
+                        </div>
+                    `;
+                } else {
+                    previewContent = `
+                        <img src="${doc.src}" class="img-fluid border rounded shadow mb-3" alt="${doc.type}" style="max-height: 350px; width: 100%; object-fit: contain; background: #fff;">
+                    `;
+                }
 
-        // Generate download buttons dynamically
-        student.images.forEach((img, index) => {
-            const downloadBtn = document.createElement('a');
-            downloadBtn.href = img.src;
-            downloadBtn.download = '';
-            downloadBtn.className = `btn ${img.btnClass} me-2 mb-2`;
-            downloadBtn.innerHTML = `<i class="fas fa-download"></i> ${img.btnText}`;
-            downloadContainer.appendChild(downloadBtn);
-        });
+                // Create Document Card
+                const docCard = document.createElement('div');
+                docCard.className = `${colWidth} mb-4`;
+                docCard.innerHTML = `
+                    <h4 class="text-center mb-3" style="color: #00306e; font-weight: 600;">${doc.type}</h4>
+                    ${previewContent}
+                    <div class="d-flex justify-content-center gap-2">
+                        <a href="${doc.src}" target="_blank" class="btn btn-outline-primary">
+                            <i class="fas fa-eye"></i> View in New Tab
+                        </a>
+                        <a href="${doc.src}" download class="btn ${doc.btnClass || 'btn-primary'}">
+                            <i class="fas fa-download"></i> ${doc.btnText || 'Download'}
+                        </a>
+                    </div>
+                `;
+                imagesContainer.appendChild(docCard);
+            });
 
-        // Show result section and scroll to it
-        resultSection.style.display = 'block';
-        resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } 
-    // 6. If not found, show error
-    else {
+            // Show result section and scroll to it
+            resultSection.style.display = 'block';
+            setTimeout(() => {
+                resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        } 
+        // 6. If not found, show error
+        else {
+            errorMessage.style.display = 'block';
+        }
+    } catch (error) {
+        console.error('Search Error:', error);
+        errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Server error. Please try again later.';
         errorMessage.style.display = 'block';
+    } finally {
+        // 7. Reset button state
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
     }
 });
 </script>

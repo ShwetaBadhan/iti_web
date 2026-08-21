@@ -6,21 +6,52 @@
                <div class="row">
                    <div class="col-lg-6">
                        <ul class="tg-header__top-info list-wrap">
-                           <li><img src="assets/img/icons/map_marker.svg" alt="Icon"> <span>Chandan Nagar ,Kartarpur
-                                   Distt. | Jalandhar</span></li>
+                           <li><img src="assets/img/icons/map_marker.svg" alt="Icon"> <span>
+                                   @if (isset($settings) && $settings->address)
+                                       {{ $settings->address }}
+                                   @else
+                                       Chandan Nagar, Kartarpur Distt | Jalandhar.
+                                   @endif
+                               </span></li>
                            <li><img src="assets/img/icons/envelope.svg" alt="Icon"> <a
-                                   href="mailto:info@ambedkariti.com">info@ambedkariti.com</a></li>
+                                   href="mailto:info@ambedkariti.com">
+                                   @if (isset($settings) && $settings->email)
+                                       {{ $settings->email }}
+                                   @else
+                                       info@ambedkariti.com
+                                   @endif
+                               </a></li>
                        </ul>
                    </div>
                    <div class="col-lg-6">
                        <div class="tg-header__top-right">
                            <ul class="tg-header__top-social list-wrap">
                                <li>Follow Us On :</li>
-                               <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                               <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                               <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
-                               <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                               <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+
+                               @if (isset($settings) && $settings->facebook)
+                                   <li><a href="{{ $settings->facebook }}" target="_blank"><i
+                                               class="fab fa-facebook-f"></i></a></li>
+                               @endif
+
+                               @if (isset($settings) && $settings->twitter)
+                                   <li><a href="{{ $settings->twitter }}" target="_blank"><i
+                                               class="fab fa-twitter"></i></a></li>
+                               @endif
+
+                               @if (isset($settings) && $settings->instagram)
+                                   <li><a href="{{ $settings->instagram }}" target="_blank"><i
+                                               class="fab fa-instagram"></i></a></li>
+                               @endif
+
+                               @if (isset($settings) && $settings->linkedin)
+                                   <li><a href="{{ $settings->linkedin }}" target="_blank"><i
+                                               class="fab fa-linkedin-in"></i></a></li>
+                               @endif
+
+                               @if (isset($settings) && $settings->youtube)
+                                   <li><a href="{{ $settings->youtube }}" target="_blank"><i
+                                               class="fab fa-youtube"></i></a></li>
+                               @endif
                            </ul>
                        </div>
                    </div>
@@ -34,8 +65,16 @@
                        <div class="tgmenu__wrap">
                            <nav class="tgmenu__nav">
                                <div class="logo">
-                                   <a href="{{ route('home') }}"><img src="assets/img/logo/logo-iti.png"
-                                           style="width: 220px;" alt="Logo"></a>
+                                   <a href="{{ route('home') }}">
+                                       @if (isset($settings) && $settings->logo)
+                                           {{-- ✅ Dynamic Logo from Database --}}
+                                           <img src="{{ asset('storage/' . $settings->logo) }}" style="width: 220px;"
+                                               alt="{{ $settings->site_name ?? 'Logo' }}">
+                                       @else
+                                           {{-- ✅ Fallback Default Logo --}}
+                                           <img src="assets/img/logo/logo-iti.png" style="width: 220px;" alt="Logo">
+                                       @endif
+                                   </a>
                                </div>
                                <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                                    <ul class="navigation">
@@ -45,61 +84,30 @@
                                        <li class="menu-item-has-children"><a href="#">Who We Are</a>
                                            <ul class="sub-menu">
                                                <li><a href="{{ route('about') }}">About Us</a></li>
-                                               <li><a href="{{ route('chairman-message') }}">Chairman Message</a></li>
-                                               <li><a href="{{ route('director-message') }}">Director Message</a></li>
+                                               <li><a href="{{ route('frontend.chairman') }}">Chairman Message</a></li>
+                                               <li><a href="{{ route('frontend.director') }}">Director Message</a></li>
                                                <li><a href="{{ route('our-mission') }}">Our Mission</a></li>
 
 
                                            </ul>
                                        </li>
-                                       <li class="menu-item-has-children"><a href="{{ route('courses') }}">Courses</a>
+                                       <li class="menu-item-has-children"><a
+                                               href="{{ route('our-courses') }}">Courses</a>
 
 
 
 
                                            <ul class="sub-menu">
-                                               <li>
-                                                   <a href="{{ route('truck-dispatch-details') }}">Truck Dispatcher</a>
-
-                                               </li>
-                                               <li>
-                                                   <a href="{{ route('fire-safety-details') }}">Fire & Safety</a>
-
-                                               </li>
-                                               <li>
-                                                   <a href="{{ route('trailer-training-details') }}">Trailer
-                                                       Training</a>
-
-                                               </li>
-                                               <li>
-                                                   <a href="{{ route('forklift-training-details') }}">Forklift
-                                                       Training</a>
-
-                                               </li>
-                                               <li>
-                                                   <a href="{{ route('jcb-training-details') }}">JCB Training</a>
-
-                                               </li>
-                                               <li>
-                                                   <a href="{{ route('excavator-training-details') }}">Excavator
-                                                       Training</a>
-
-                                               </li>
-                                               <li>
-                                                   <a href="{{ route('motor-mechanic-details') }}">Motor Mechanic</a>
-
-                                               </li>
-                                               <li>
-                                                   <a href="{{ route('video-editing-details') }}">Video Editing</a>
-
-                                               </li>
-                                               <li>
-                                                   <a href="{{ route('car-driving-details') }}">Car Driving</a>
-
-                                               </li>
-
-
-
+                                               @forelse($menuCourses as $course)
+                                                   <li>
+                                                       <a
+                                                           href="{{ route('course.details', $course->slug) }}">{{ $course->name }}</a>
+                                                   </li>
+                                               @empty
+                                                   <li>
+                                                       <a href="{{ route('courses') }}">No courses available</a>
+                                                   </li>
+                                               @endforelse
                                            </ul>
 
 
@@ -107,12 +115,12 @@
                                        <li><a href="{{ route('our-gallery') }}">Photo Gallery</a>
 
                                        </li>
-                                     
+
 
                                        <li><a href="{{ route('our-results') }}">Results</a>
 
                                        </li>
-                                         <li><a href="{{ route('our-blogs') }}">Our Blogs</a>
+                                       <li><a href="{{ route('our-blogs') }}">Our Blogs</a>
 
                                        </li>
                                        <li><a href="{{ route('contact-us') }}">Contact Us</a>
