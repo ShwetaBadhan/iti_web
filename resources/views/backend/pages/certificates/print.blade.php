@@ -10,7 +10,7 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
-            font-family: 'Segoe UI', Tahoma, sans-serif; 
+             font-family: 'Georgia', serif;
             background: #ffffff;
             overflow-x: hidden;
         }
@@ -61,40 +61,46 @@
             text-align: center;
         }
 
-        .student-name { 
-            top: 63%; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            font-size: 28px; 
-            letter-spacing: 2px;
-        }
-        .father-name { 
+        .student-name
+ {
+    top: 64%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+        {{-- .father-name { 
             top: 50%; 
             left: 50%; 
             transform: translateX(-50%); 
             font-size: 20px; 
-        }
+        } --}}
         .roll-number { 
             top: 29%; 
             left: 84%; 
-            font-size: 18px; 
+            font-size: 20px; 
             text-align: left;
             width: 200px;
+                font-family: 'remixicon' !important; 
         }
-        .course-name { 
-            top: 38%; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            font-size: 2.8rem; 
-            width: 400px;
-            color: #fff;
-        }
+       .course-name {
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.2rem;
+    width: 400px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 100;
+}
         .issue-date { 
             top: 84%; 
-            left: 10%; 
-            font-size: 18px; 
+            left: 9%; 
+            font-size: 20px; 
             text-align: right;
             width: 200px;
+            font-family: 'remixicon' !important; 
         }
 
         @media print {
@@ -130,17 +136,18 @@
         <div class="certificate-container">
             <div class="overlay-text student-name">{{ $student->name }}</div>
             
-            @if($student->father_name)
+            {{-- @if($student->father_name)
                 <div class="overlay-text father-name">{{ $student->father_name }}</div>
-            @endif
+            @endif --}}
             
             <div class="overlay-text roll-number">{{ $student->roll_number }}</div>
             
             <div class="overlay-text course-name">{{ $student->course }}</div>
-            
-            <div class="overlay-text issue-date">
+             <div class="overlay-text issue-date">
+                {{ $student->course_to_date ? $student->course_to_date->format('d F, Y') : '' }}</div>
+            {{-- <div class="overlay-text issue-date">
                 {{ now()->format('d M, Y') }}
-            </div>
+            </div> --}}
         </div>
     </div>
 

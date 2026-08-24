@@ -80,18 +80,18 @@
                                         <option value="Fire & Safety"
                                             {{ old('course', $student->course) == 'Fire & Safety' ? 'selected' : '' }}>Fire
                                             & Safety</option>
-                                        <option value="Trailer Training"
-                                            {{ old('course', $student->course) == 'Trailer Training' ? 'selected' : '' }}>
-                                            Trailer Training</option>
-                                        <option value="Forklift Training"
-                                            {{ old('course', $student->course) == 'Forklift Training' ? 'selected' : '' }}>
-                                            Forklift Training</option>
-                                        <option value="JCB Training"
-                                            {{ old('course', $student->course) == 'JCB Training' ? 'selected' : '' }}>JCB
-                                            Training</option>
-                                        <option value="Excavator Training"
-                                            {{ old('course', $student->course) == 'Excavator Training' ? 'selected' : '' }}>
-                                            Excavator Training</option>
+                                        <option value="HTV Trailer"
+                                            {{ old('course', $student->course) == 'HTV Trailer' ? 'selected' : '' }}>
+                                            HTV Trailer</option>
+                                        <option value="Forklift "
+                                            {{ old('course', $student->course) == 'Forklift ' ? 'selected' : '' }}>
+                                            Forklift </option>
+                                        <option value="JCB "
+                                            {{ old('course', $student->course) == 'JCB ' ? 'selected' : '' }}>JCB
+                                            </option>
+                                        <option value="Excavator "
+                                            {{ old('course', $student->course) == 'Excavator ' ? 'selected' : '' }}>
+                                            Excavator </option>
                                         <option value="Motor Mechanic"
                                             {{ old('course', $student->course) == 'Motor Mechanic' ? 'selected' : '' }}>
                                             Motor Mechanic</option>

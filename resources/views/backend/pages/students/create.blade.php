@@ -70,16 +70,16 @@
                                         </option>
                                         <option value="Fire & Safety"
                                             {{ old('course') == 'Fire & Safety' ? 'selected' : '' }}>Fire & Safety</option>
-                                        <option value="Trailer Training"
-                                            {{ old('course') == 'Trailer Training' ? 'selected' : '' }}>Trailer Training
+                                        <option value="HTV Trailer"
+                                            {{ old('course') == 'HTV Trailer' ? 'selected' : '' }}>HTV Trailer
                                         </option>
-                                        <option value="Forklift Training"
-                                            {{ old('course') == 'Forklift Training' ? 'selected' : '' }}>Forklift Training
+                                        <option value="Forklift"
+                                            {{ old('course') == 'Forklift' ? 'selected' : '' }}>Forklift
                                         </option>
-                                        <option value="JCB Training"
-                                            {{ old('course') == 'JCB Training' ? 'selected' : '' }}>JCB Training</option>
-                                        <option value="Excavator Training"
-                                            {{ old('course') == 'Excavator Training' ? 'selected' : '' }}>Excavator Training
+                                        <option value="JCB"
+                                            {{ old('course') == 'JCB' ? 'selected' : '' }}>JCB</option>
+                                        <option value="Excavator"
+                                            {{ old('course') == 'Excavator' ? 'selected' : '' }}>Excavator
                                         </option>
                                         <option value="Motor Mechanic"
                                             {{ old('course') == 'Motor Mechanic' ? 'selected' : '' }}>Motor Mechanic

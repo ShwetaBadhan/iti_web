@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
+             font-family: 'remixicon' !important; 
             background: #ffffff;
             {{-- overflow: hidden;  --}}
         }
@@ -78,16 +78,18 @@
             text-align: center;
             white-space: nowrap;
             font-size: 20px;
+             font-family: 'remixicon' !important; 
         }
 
         .student-photo {
-            top: 21%;
+            top: 20.9%;
             right: 1%;
             transform: translateX(-50%);
             width: 128px;
             height: 165px;
             overflow: hidden;
             background: #f0f0f0;
+             font-family: 'remixicon' !important; 
         }
 
         .student-img {
@@ -102,12 +104,14 @@
             left: 75%;
             transform: translateX(-50%);
             font-size: 20px;
+             font-family: 'remixicon' !important; 
         }
 
         .dob {
             top: 46%;
             right: 9%;
             font-size: 18px;
+             font-family: 'remixicon' !important; 
         }
 
         .course {
@@ -115,48 +119,56 @@
             left: 22%;
             transform: translateX(-50%);
             font-size: 20px;
+             font-family: 'remixicon' !important; 
         }
 
         .cert-number {
             top: 46%;
             left: 14%;
             font-size: 18px;
+             font-family: 'remixicon' !important; 
         }
 
         .from-date {
             top: 61%;
             left: 57%;
             font-size: 20px;
+             font-family: 'remixicon' !important; 
         }
 
         .to-date {
             top: 61%;
             right: 10%;
             font-size: 20px;
+             font-family: 'remixicon' !important; 
         }
 
         .success {
-            top: 71%;
+            top: 71.8%;
             left: 29%;
             font-size: 20px;
+             font-family: 'remixicon' !important; 
         }
 
         .state {
             top: 56%;
             left: 52%;
             font-size: 20px;
+             font-family: 'remixicon' !important; 
         }
 
         .district {
             top: 56%;
             left: 18%;
             font-size: 20px;
+             font-family: 'remixicon' !important; 
         }
 
         .grade {
             top: 71%;
             right: 15%;
             font-size: 20px;
+             font-family: 'remixicon' !important; 
         }
     </style>
 </head>
@@ -180,7 +192,7 @@
                 @endif
             </div>
             <div class="overlay-text father-name">{{ $student->father_name ?? 'Father Name' }}</div>
-            <div class="overlay-text dob">{{ $student->dob ? $student->dob->format('d M, Y') : '01 Jan 2000' }}</div>
+            <div class="overlay-text dob">{{ $student->dob ? $student->dob->format('d F, Y') : '01 Jan 2000' }}</div>
             <div class="overlay-text course">{{ $student->course ?? 'Course Name' }}</div>
             <div class="overlay-text state">{{ $student->state ?? '' }}</div>
             <div class="overlay-text district">{{ $student->district ?? '' }}</div>
@@ -188,9 +200,9 @@
             <div class="overlay-text grade">A<sup style="font-size: 0.6em; vertical-align: super;">+</sup></div>
             <div class="overlay-text cert-number">{{ $student->roll_number ?? 'F5-001' }}</div>
             <div class="overlay-text from-date">
-                {{ $student->course_from_date ? $student->course_from_date->format('d M, Y') : '' }}</div>
+                {{ $student->course_from_date ? $student->course_from_date->format('d F, Y') : '' }}</div>
             <div class="overlay-text to-date">
-                {{ $student->course_to_date ? $student->course_to_date->format('d M, Y') : '' }}</div>
+                {{ $student->course_to_date ? $student->course_to_date->format('d F, Y') : '' }}</div>
         </div>
     </div>
 
