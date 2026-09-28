@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\Result;
+use App\Models\GeneralSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class StudentController extends Controller
 {
@@ -90,7 +93,7 @@ class StudentController extends Controller
         }
 
         Student::create($validated);
-        
+
         return redirect()->route('students.index')->with('success', 'Student added successfully! Roll No: ' . $validated['roll_number']);
     }
 
@@ -124,7 +127,7 @@ class StudentController extends Controller
         if (empty($validated['roll_number'])) {
             $validated['roll_number'] = $student->roll_number;
         }
-        
+
         if ($request->hasFile('photo')) {
             if ($student->photo && Storage::exists('public/' . $student->photo)) {
                 Storage::delete('public/' . $student->photo);
@@ -142,4 +145,15 @@ class StudentController extends Controller
         $student->delete();
         return redirect()->route('students.index')->with('success', 'Student deleted successfully!');
     }
+
+ public function downloadAdmissionForm(Student $student)
+{
+    $data = [
+        'student'       => $student,
+        'generatedDate' => now()->format('d M, Y'),
+    ];
+
+  
+    return view('backend.pages.students.admission-form', $data);
+}
 }

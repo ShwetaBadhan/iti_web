@@ -14,7 +14,7 @@ class GeneralSetting extends Model
     'site_name', 'email', 'phone', 'website_url', 'address',
     'logo', 'favicon', 'backend_logo', 'cover_image',
     'facebook', 'twitter', 'instagram', 'linkedin', 'youtube',
-    'sample_certificate', 'form5_certificate' // <-- Added form5_certificate
+    'sample_certificate', 'form5_certificate' , 'admission_form_template'
 ];
 
 protected static function boot()
@@ -22,7 +22,7 @@ protected static function boot()
     parent::boot();
     static::deleting(function ($setting) {
         // Added 'form5_certificate' to the cleanup array
-        $fields = ['logo', 'favicon', 'backend_logo', 'cover_image', 'sample_certificate', 'form5_certificate'];
+        $fields = ['logo', 'favicon', 'backend_logo', 'cover_image', 'sample_certificate', 'form5_certificate', 'admission_form_template'];
         foreach ($fields as $field) {
             if ($setting->$field && Storage::exists('public/' . $setting->$field)) {
                 Storage::delete('public/' . $setting->$field);

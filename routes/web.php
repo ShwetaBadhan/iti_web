@@ -24,6 +24,9 @@ use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\SeoController;
 use App\Http\Controllers\FeeReceiptController;
 use App\Http\Controllers\DashboardController;
+
+
+Route::get('/contact-queries', [ContactController::class, 'index'])->name('contact-queries.index');
 // ==========================================
 // 1. AUTHENTICATION ROUTES (Top Priority)
 // ==========================================
@@ -125,7 +128,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('students.edit');
     Route::put('/students/{student}', [StudentController::class, 'update'])->name('students.update');
     Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
-
+Route::get('/students/{student}/admission-form', [StudentController::class, 'downloadAdmissionForm'])->name('students.admission-form');
     // Roles & Permissions
     Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
     Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');

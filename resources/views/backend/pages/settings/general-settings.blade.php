@@ -310,6 +310,50 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Admission Form Template Section -->
+<h6 class="fw-bold text-primary-light mb-3 mt-4 pt-3 border-top">Admission Form Template</h6>
+<div class="row gy-4">
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-secondary-light text-sm mb-8">
+            Admission Form Template <span class="text-secondary-light fw-normal">(PDF or Image, Max 7MB)</span>
+        </label>
+        <input type="file" name="admission_form_template" class="form-control radius-8"
+            accept=".pdf, image/*" onchange="previewCertificate(this, 'previewAdmissionForm')">
+        <small class="text-muted d-block mt-1">Specific template used for admission form generation.</small>
+
+        <div class="avatar-upload mt-16 text-center p-3 border rounded bg-light">
+            @if ($setting && $setting->admission_form_template)
+                @php
+                    $ext = strtolower(pathinfo($setting->admission_form_template, PATHINFO_EXTENSION));
+                @endphp
+
+                @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
+                    <!-- Image Preview -->
+                    <img id="previewAdmissionForm"
+                        src="{{ asset('storage/' . $setting->admission_form_template) }}"
+                        class="img-fluid rounded border p-1" style="max-height: 150px;">
+                @else
+                    <!-- PDF Preview -->
+                    <div id="previewAdmissionForm"
+                        class="d-flex flex-column align-items-center justify-content-center py-3">
+                        <i class="ri-file-pdf-fill text-danger" style="font-size: 48px;"></i>
+                        <a href="{{ asset('storage/' . $setting->admission_form_template) }}"
+                            target="_blank" class="btn btn-sm btn-outline-primary mt-2 radius-8">
+                            <i class="ri-eye-line me-1"></i> View Current Admission Form
+                        </a>
+                    </div>
+                @endif
+            @else
+                <!-- Empty State -->
+                <div id="previewAdmissionForm"
+                    class="d-none d-flex flex-column align-items-center justify-content-center py-3">
+                    <i class="ri-file-upload-line text-muted" style="font-size: 48px;"></i>
+                    <span class="text-muted small mt-2">No admission form template uploaded</span>
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
                         <!-- Buttons -->
                         <div class="d-flex align-items-center justify-content-end gap-3 mt-24 pt-3 border-top">
                             <button type="reset"
@@ -342,7 +386,7 @@
             }
         }
 
-        // New smart preview for Certificate (Handles both PDF and Image)
+        // Certificate preview function
         function previewCertificate(input, previewId) {
             if (input.files && input.files[0]) {
                 const file = input.files[0];
@@ -350,20 +394,46 @@
 
                 if (file.type === 'application/pdf') {
                     previewContainer.innerHTML = `
-                    <div class="d-flex flex-column align-items-center justify-content-center py-3">
-                        <i class="ri-file-pdf-fill text-danger" style="font-size: 48px;"></i>
-                        <span class="text-muted small mt-2">${file.name}</span>
-                    </div>
-                `;
-                    previewContainer.classList.remove('d-none');
+                        <div class="d-flex flex-column align-items-center justify-content-center py-3">
+                            <i class="ri-file-pdf-fill text-danger" style="font-size: 48px;"></i>
+                            <span class="text-muted small mt-2">${file.name}</span>
+                        </div>
+                    `;
                 } else {
                     const reader = new FileReader();
                     reader.onload = function(e) {
                         previewContainer.innerHTML =
-                            `<img src="${e.target.result}" class="img-fluid rounded border p-1" style="max-height: 150px;">`;
-                        previewContainer.classList.remove('d-none');
+                            `<img src="${e.target.result}" class="img-fluid rounded border" style="max-height: 200px;">`;
                     }
                     reader.readAsDataURL(file);
+                }
+            }
+        }
+
+        // NEW: Specific function for Admission Form preview
+        function previewAdmissionFile(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                const previewContainer = document.getElementById('admissionFormPreviewContainer');
+
+                if (file.type === 'application/pdf') {
+                    previewContainer.innerHTML = `
+                        <div class="d-flex flex-column align-items-center justify-content-center py-3">
+                            <i class="ri-file-pdf-fill text-danger" style="font-size: 48px;"></i>
+                            <span class="text-muted small mt-2">${file.name}</span>
+                            <span class="text-muted small">(PDF File)</span>
+                        </div>
+                    `;
+                } else if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        previewContainer.innerHTML = `
+                            <img src="${e.target.result}" class="img-fluid rounded border" style="max-height: 200px;">
+                        `;
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    alert('Please upload a valid PDF or image file');
                 }
             }
         }

@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+      public function index()
+    {
+       
+        $queries = ContactInquiry::latest()->get();
+        
+        return view('backend.pages.contact-queries.index', compact('queries'));
+    }
     public function submit(Request $request)
     {
         $validated = $request->validate([

@@ -35,17 +35,16 @@
                     <form id="resultForm" class="result-form">
                         <select id="courseSelect" required>
                             <option value="">Select Course</option>
-                            <option value="Electrician">Electrician</option>
-                            <option value="Plumber & Drainage">Plumber & Drainage</option>
-                            <option value="Welding">Welding</option>
-                            <option value="Motor Mechanic">Motor Mechanic</option>
-                            <option value="Forklift Training">Forklift Training</option>
-                            <option value="JCB Training">JCB Training</option>
-                            <option value="Excavator Training">Excavator Training</option>
                             <option value="Truck Dispatch">Truck Dispatch</option>
                             <option value="Fire & Safety">Fire & Safety</option>
-                            <option value="Trailer Training">Trailer Training</option>
+                            <option value="HTV Trailer">HTV Trailer</option>
+                            <option value="Forklift">Forklift</option>
+                            <option value="JCB">JCB</option>
+                            <option value="Excavator">Excavator</option>
+                            <option value="Motor Mechanic">Excavator Training</option>
+                            <option value="Truck Dispatch">Motor Mechanic</option>
                             <option value="Video Editing">Video Editing</option>
+                            <option value="Car Driving">Car Driving</option>
                         </select>
 
                         <input type="text" id="rollInput" placeholder="Enter Roll Number" required>
